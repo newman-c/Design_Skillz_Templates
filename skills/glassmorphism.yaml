@@ -1,0 +1,56 @@
+name: Glassmorphism
+slug: glassmorphism
+version: "1.0.0"
+description: Frosted glass surfaces with vibrant gradients, blur effects, and luminous depth
+mood:
+  - futuristic
+  - premium
+  - ethereal
+  - vibrant
+colors:
+  primary: "#7C3AED"
+  secondary: "#EC4899"
+  accent: "#06B6D4"
+  background: "#0F0F1A"
+  surface: "rgba(255, 255, 255, 0.08)"
+  text: "#FFFFFF"
+  textMuted: "rgba(255, 255, 255, 0.6)"
+  border: "rgba(255, 255, 255, 0.15)"
+typography:
+  headingFont: "Syne, sans-serif"
+  bodyFont: "Plus Jakarta Sans, sans-serif"
+  monoFont: "Fira Code, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.25"
+  headingWeight: "700"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1200px"
+  sectionPadding: "100px 0"
+  componentGap: "24px"
+  borderRadius: "16px"
+designPrinciples:
+  - "Backgrounds are dark with rich purple-to-blue gradient meshes"
+  - "Cards use backdrop-filter: blur(20px) with rgba white surface"
+  - "Subtle white border (rgba 15%) separates glass from background"
+  - "Glowing elements: colored drop-shadows matching the accent"
+  - "Content is always light text on dark glass"
+componentStyle: >
+  Cards: background rgba(255,255,255,0.08), backdrop-filter blur(20px),
+  border 1px solid rgba(255,255,255,0.15), border-radius 16px.
+  Buttons: gradient fills (primary to secondary) with a soft glow.
+  Inputs: glass background with white 15% border, white text.
+  Background: dark #0F0F1A with large blurred radial gradient orbs in
+  purple and cyan positioned behind key sections.
+prompt: >
+  Build this interface using the Glassmorphism design language. The background
+  is a deep dark navy #0F0F1A with large blurred gradient orbs (purple #7C3AED
+  and cyan #06B6D4) placed as background decoration. All UI cards and panels
+  must use: background rgba(255,255,255,0.08), backdrop-filter blur(20px),
+  border 1px solid rgba(255,255,255,0.15), border-radius 16px.
+  Text is pure white or rgba white at 60% for muted. Buttons use gradient fills
+  from primary to secondary with a matching glow (box-shadow with color).
+  Think Apple's WWDC keynote slides, Stripe's 2023 gradient homepage,
+  or iOS 16 widgets. Premium, futuristic, luminous.
+exampleUseCase: "Web3 app, AI product, music platform, premium SaaS dashboard"

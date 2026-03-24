@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeUI — Design Skill Files</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #222222;
+    --border2: #2a2a2a;
+    --text: #f0f0f0;
+    --text2: #888888;
+    --text3: #555555;
+    --accent: #7c3aed;
+    --accent2: #a855f7;
+    --green: #22c55e;
+    --radius: 10px;
+  }
+
+  html { height: 100%; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    background: var(--bg);
+    z-index: 10;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text);
+  }
+
+  .logo-icon {
+    width: 28px; height: 28px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+
+  .header-badge {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text3);
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-sm {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .btn-sm:hover { border-color: var(--accent); color: var(--text); }
+
+  /* ── LAYOUT ── */
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 10px;
+  }
+
+  .search {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 7px;
+    padding: 7px 12px;
+    font-size: 13px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search::placeholder { color: var(--text3); }
+  .search:focus { border-color: var(--accent); }
+
+  .skill-list {
+    overflow-y: auto;
+    flex: 1;
+    padding: 8px;
+  }
+  .skill-list::-webkit-scrollbar { width: 4px; }
+  .skill-list::-webkit-scrollbar-track { background: transparent; }
+  .skill-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .skill-card {
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 4px;
+  }
+  .skill-card:hover { background: var(--surface); border-color: var(--border2); }
+  .skill-card.active { background: var(--surface2); border-color: var(--accent); }
+
+  .skill-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .color-dot {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .skill-card-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .skill-card-desc {
+    font-size: 11px;
+    color: var(--text2);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .mood-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .mood-tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--text3);
+    border: 1px solid var(--border2);
+  }
+  .skill-card.active .mood-tag { border-color: rgba(124,58,237,0.3); color: var(--accent2); }
+
+  /* ── MAIN ── */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px;
+  }
+  .main::-webkit-scrollbar { width: 4px; }
+  .main::-webkit-scrollbar-track { background: transparent; }
+  .main::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: var(--text3);
+    text-align: center;
+  }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .empty-state h2 { font-size: 18px; color: var(--text2); margin-bottom: 8px; }
+  .empty-state p { font-size: 13px; line-height: 1.6; max-width: 300px; }
+
+  /* ── SKILL DETAIL ── */
+  .skill-detail { max-width: 860px; }
+
+  .detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    gap: 20px;
+  }
+
+  .detail-title-area {}
+
+  .detail-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .detail-desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .detail-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .btn-copy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .btn-copy:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-copy.copied { background: linear-gradient(135deg, #166534, var(--green)); }
+
+  .btn-outline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--text); }
+
+  /* ── GRID ── */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .detail-grid.full { grid-template-columns: 1fr; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 14px;
+  }
+
+  /* ── COLORS ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .color-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .color-swatch {
+    width: 32px; height: 32px;
+    border-radius: 7px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+  }
+  .color-swatch:hover { transform: scale(1.1); }
+
+  .color-info {}
+  .color-label { font-size: 11px; color: var(--text3); margin-bottom: 1px; }
+  .color-hex {
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text2);
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .typo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .typo-row:last-child { border-bottom: none; }
+  .typo-label { font-size: 12px; color: var(--text3); }
+  .typo-value { font-size: 12px; color: var(--text2); font-family: 'JetBrains Mono', monospace; text-align: right; }
+
+  /* ── PRINCIPLES ── */
+  .principle-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+  .principle-item:last-child { border-bottom: none; }
+  .principle-dot { color: var(--accent2); flex-shrink: 0; margin-top: 1px; }
+
+  /* ── PROMPT BLOCK ── */
+  .prompt-block {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .prompt-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+  .prompt-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #c8d3f5;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  .prompt-text::-webkit-scrollbar { width: 4px; }
+  .prompt-text::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* ── MOOD PALETTE ── */
+  .palette-strip {
+    display: flex;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+    margin-bottom: 16px;
+  }
+  .palette-color { flex: 1; transition: flex 0.2s; cursor: pointer; }
+  .palette-color:hover { flex: 2; }
+
+  /* ── EDIT PANEL ── */
+  .edit-panel {
+    display: none;
+    margin-bottom: 16px;
+  }
+  .edit-panel.open { display: block; }
+
+  .edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .edit-field label {
+    display: block;
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .edit-field-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .edit-color-preview {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    flex-shrink: 0;
+  }
+  .edit-input {
+    flex: 1;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .edit-input:focus { border-color: var(--accent); }
+
+  .edit-save-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .btn-save {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 7px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s;
+  }
+  .btn-save:hover { opacity: 0.85; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+    z-index: 999;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── PREVIEW BUTTON ── */
+  .btn-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    margin-top: 8px;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    border: 1px dashed var(--border2);
+    background: transparent;
+    color: var(--text2);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-preview:hover {
+    border-color: var(--accent);
+    color: var(--accent2);
+    background: rgba(124,58,237,0.06);
+  }
+  .btn-preview .preview-icon { font-size: 18px; }
+
+  /* ── PREVIEW MODAL ── */
+  .preview-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .preview-overlay.open { display: flex; }
+
+  .preview-modal {
+    width: 100%;
+    max-width: 1100px;
+    height: calc(100vh - 80px);
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+
+  .preview-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 52px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .preview-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .preview-skill-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(124,58,237,0.15);
+    color: var(--accent2);
+    border: 1px solid rgba(124,58,237,0.3);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .preview-modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .preview-size-btn {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text3);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .preview-size-btn:hover, .preview-size-btn.active {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .preview-close {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .preview-close:hover { border-color: #ef4444; color: #ef4444; }
+
+  .preview-frame-wrap {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    background: #050505;
+    transition: all 0.3s;
+  }
+
+  .preview-frame-wrap.mobile {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  #previewFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 0;
+  }
+
+  .preview-frame-wrap.mobile #previewFrame {
+    width: 390px;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border2);
+  }
+
+  /* ── LANG SWITCHER ── */
+  .lang-switcher { position: relative; }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text2);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .lang-btn:hover { border-color: var(--accent); color: var(--text); }
+  .lang-btn .lang-arrow { font-size: 9px; opacity: 0.5; transition: transform 0.2s; }
+  .lang-btn.open .lang-arrow { transform: rotate(180deg); }
+
+  .lang-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 6px;
+    min-width: 160px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    z-index: 500;
+  }
+  .lang-dropdown.open { display: block; }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text2);
+    transition: all 0.1s;
+    font-family: inherit;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+  }
+  .lang-item:hover { background: var(--border); color: var(--text); }
+  .lang-item.active { color: var(--accent2); background: rgba(124,58,237,0.1); }
+  .lang-item .lang-flag { font-size: 16px; line-height: 1; }
+  .lang-item .lang-name { flex: 1; }
+  .lang-item .lang-code { font-size: 10px; font-family: 'JetBrains Mono', monospace; color: var(--text3); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .sidebar { width: 240px; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .edit-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .sidebar { display: none; }
+    .main { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">✦</div>
+    TypeUI
+  </div>
+  <div class="header-right">
+    <span class="header-badge" id="skillCountBadge">6 design skills</span>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown()">
+        <span id="langFlag">🇺🇸</span>
+        <span id="langCode">EN</span>
+        <span class="lang-arrow">▾</span>
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-item active" onclick="setLang('en')"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code">EN</span></button>
+        <button class="lang-item" onclick="setLang('de')"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code">DE</span></button>
+        <button class="lang-item" onclick="setLang('fr')"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></button>
+        <button class="lang-item" onclick="setLang('es')"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></button>
+        <button class="lang-item" onclick="setLang('pt')"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span><span class="lang-code">PT</span></button>
+        <button class="lang-item" onclick="setLang('it')"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code">IT</span></button>
+        <button class="lang-item" onclick="setLang('ru')"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></button>
+        <button class="lang-item" onclick="setLang('ja')"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span><span class="lang-code">JA</span></button>
+        <button class="lang-item" onclick="setLang('zh')"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></button>
+        <button class="lang-item" onclick="setLang('ko')"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span><span class="lang-code">KO</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title" id="sidebarTitle">Design Skills</div>
+      <input class="search" type="text" id="searchInput">
+    </div>
+    <div class="skill-list" id="skillList"></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">✦</div>
+      <h2 id="emptyTitle">Select a Design Skill</h2>
+      <p id="emptyDesc">Choose a style from the sidebar to preview colors, typography, and the ready-to-use Claude prompt.</p>
+    </div>
+    <div class="skill-detail" id="skillDetail" style="display:none;"></div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- PREVIEW MODAL -->
+<div class="preview-overlay" id="previewOverlay" onclick="overlayClose(event)">
+  <div class="preview-modal">
+    <div class="preview-modal-header">
+      <div class="preview-modal-title">
+        <span id="previewModalTitle">◱ Design Preview</span>
+        <span class="preview-skill-badge" id="previewBadge">—</span>
+      </div>
+      <div class="preview-modal-controls">
+        <button class="preview-size-btn active" id="btnDesktop" onclick="setPreviewSize('desktop')">Desktop</button>
+        <button class="preview-size-btn" id="btnMobile" onclick="setPreviewSize('mobile')">Mobile</button>
+        <button class="preview-close" onclick="closePreview()">✕</button>
+      </div>
+    </div>
+    <div class="preview-frame-wrap" id="previewFrameWrap">
+      <iframe id="previewFrame" title="Design Preview"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  let allSkills = [];
+  let currentSkill = null;
+  let currentLang = localStorage.getItem('typeui-lang') || 'en';
+
+  // ── TRANSLATIONS ──
+  const LANGS = {
+    en: { flag: '🇺🇸', code: 'EN' },
+    de: { flag: '🇩🇪', code: 'DE' },
+    fr: { flag: '🇫🇷', code: 'FR' },
+    es: { flag: '🇪🇸', code: 'ES' },
+    pt: { flag: '🇧🇷', code: 'PT' },
+    it: { flag: '🇮🇹', code: 'IT' },
+    ru: { flag: '🇷🇺', code: 'RU' },
+    ja: { flag: '🇯🇵', code: 'JA' },
+    zh: { flag: '🇨🇳', code: 'ZH' },
+    ko: { flag: '🇰🇷', code: 'KO' },
+  };
+
+  const I18N = {
+    en: {
+      skillsBadge: n => `${n} design skills`,
+      sidebarTitle: 'Design Skills',
+      searchPlaceholder: 'Search skills...',
+      emptyTitle: 'Select a Design Skill',
+      emptyDesc: 'Choose a style from the sidebar to preview colors, typography, and the ready-to-use Claude prompt.',
+      editBtn: '⚙ Edit',
+      copyPromptBtn: 'Copy Prompt',
+      copiedBtn: '✓ Copied!',
+      editPanelTitle: 'Edit Colors & Typography',
+      headingFontLabel: 'Heading Font',
+      bodyFontLabel: 'Body Font',
+      cancelBtn: 'Cancel',
+      saveBtn: 'Save Changes',
+      colorsTitle: 'Color Palette',
+      typographyTitle: 'Typography',
+      spacingTitle: 'Spacing & Layout',
+      principlesTitle: 'Design Principles',
+      promptTitle: 'Claude Prompt — ready to paste',
+      copySmall: 'Copy',
+      loadingPrompt: 'Loading prompt...',
+      componentTitle: 'Component Style Notes',
+      previewBtn: '◱  Show Design Preview',
+      previewModalTitle: '◱ Design Preview',
+      colorLabels: { primary:'Primary', secondary:'Secondary', accent:'Accent', background:'Background', surface:'Surface', text:'Text', textMuted:'Text Muted', border:'Border' },
+      typoLabels: { heading:'Heading', body:'Body', mono:'Mono', baseSize:'Base Size', scale:'Scale', headingWt:'Heading Wt.', bodyWt:'Body Wt.' },
+      spacingLabels: { unit:'Unit', maxWidth:'Max Width', radius:'Radius', gap:'Component Gap' },
+      toastCopied: 'Copied to clipboard',
+      toastUpdated: 'Skill updated ✓',
+      toastNoChange: 'No changes specified.',
+      desktopBtn: 'Desktop',
+      mobileBtn: 'Mobile',
+    },
+    de: {
+      skillsBadge: n => `${n} Design-Skills`,
+      sidebarTitle: 'Design-Skills',
+      searchPlaceholder: 'Skills suchen...',
+      emptyTitle: 'Design-Skill auswählen',
+      emptyDesc: 'Wähle einen Stil aus der Seitenleiste, um Farben, Typografie und den fertigen Claude-Prompt anzusehen.',
+      editBtn: '⚙ Bearbeiten',
+      copyPromptBtn: 'Prompt kopieren',
+      copiedBtn: '✓ Kopiert!',
+      editPanelTitle: 'Farben & Schriften bearbeiten',
+      headingFontLabel: 'Überschrift-Font',
+      bodyFontLabel: 'Text-Font',
+      cancelBtn: 'Abbrechen',
+      saveBtn: 'Speichern',
+      colorsTitle: 'Farbpalette',
+      typographyTitle: 'Typografie',
+      spacingTitle: 'Abstände & Layout',
+      principlesTitle: 'Design-Prinzipien',
+      promptTitle: 'Claude-Prompt — zum Einfügen bereit',
+      copySmall: 'Kopieren',
+      loadingPrompt: 'Prompt wird geladen...',
+      componentTitle: 'Komponenten-Stile',
+      previewBtn: '◱  Design-Vorschau anzeigen',
+      previewModalTitle: '◱ Design-Vorschau',
+      colorLabels: { primary:'Primär', secondary:'Sekundär', accent:'Akzent', background:'Hintergrund', surface:'Oberfläche', text:'Text', textMuted:'Text gedimmt', border:'Rahmen' },
+      typoLabels: { heading:'Überschrift', body:'Fließtext', mono:'Mono', baseSize:'Basisgröße', scale:'Skalierung', headingWt:'Überschrift Stärke', bodyWt:'Text Stärke' },
+      spacingLabels: { unit:'Einheit', maxWidth:'Max. Breite', radius:'Radius', gap:'Komponentenabstand' },
+      toastCopied: 'In Zwischenablage kopiert',
+      toastUpdated: 'Skill gespeichert ✓',
+      toastNoChange: 'Keine Änderungen angegeben.',
+      desktopBtn: 'Desktop',
+      mobileBtn: 'Mobil',
+    },
+    fr: {
+      skillsBadge: n => `${n} styles design`,
+      sidebarTitle: 'Styles Design',
+      searchPlaceholder: 'Rechercher...',
+      emptyTitle: 'Choisir un style',
+      emptyDesc: 'Sélectionnez un style dans la barre latérale pour prévisualiser les couleurs, la typographie et le prompt Claude.',
+      editBtn: '⚙ Modifier',
+      copyPromptBtn: 'Copier le prompt',
+      copiedBtn: '✓ Copié !',
+      editPanelTitle: 'Modifier couleurs & typographie',
+      headingFontLabel: 'Police de titre',
+      bodyFontLabel: 'Police de corps',
+      cancelBtn: 'Annuler',
+      saveBtn: 'Enregistrer',
+      colorsTitle: 'Palette de couleurs',
+      typographyTitle: 'Typographie',
+      spacingTitle: 'Espacement & mise en page',
+      principlesTitle: 'Principes de design',
+      promptTitle: 'Prompt Claude — prêt à coller',
+      copySmall: 'Copier',
+      loadingPrompt: 'Chargement du prompt...',
+      componentTitle: 'Notes sur les composants',
+      previewBtn: '◱  Aperçu du design',
+      previewModalTitle: '◱ Aperçu du design',
+      colorLabels: { primary:'Primaire', secondary:'Secondaire', accent:'Accent', background:'Arrière-plan', surface:'Surface', text:'Texte', textMuted:'Texte atténué', border:'Bordure' },
+      typoLabels: { heading:'Titre', body:'Corps', mono:'Mono', baseSize:'Taille de base', scale:'Échelle', headingWt:'Graissse titre', bodyWt:'Graisse corps' },
+      spacingLabels: { unit:'Unité', maxWidth:'Largeur max', radius:'Rayon', gap:'Écart composant' },
+      toastCopied: 'Copié dans le presse-papiers',
+      toastUpdated: 'Style mis à jour ✓',
+      toastNoChange: 'Aucune modification spécifiée.',
+      desktopBtn: 'Bureau',
+      mobileBtn: 'Mobile',
+    },
+    es: {
+      skillsBadge: n => `${n} estilos de diseño`,
+      sidebarTitle: 'Estilos de Diseño',
+      searchPlaceholder: 'Buscar estilos...',
+      emptyTitle: 'Selecciona un estilo',
+      emptyDesc: 'Elige un estilo de la barra lateral para ver colores, tipografía y el prompt listo para Claude.',
+      editBtn: '⚙ Editar',
+      copyPromptBtn: 'Copiar prompt',
+      copiedBtn: '✓ ¡Copiado!',
+      editPanelTitle: 'Editar colores y tipografía',
+      headingFontLabel: 'Fuente de título',
+      bodyFontLabel: 'Fuente de cuerpo',
+      cancelBtn: 'Cancelar',
+      saveBtn: 'Guardar cambios',
+      colorsTitle: 'Paleta de colores',
+      typographyTitle: 'Tipografía',
+      spacingTitle: 'Espaciado y diseño',
+      principlesTitle: 'Principios de diseño',
+      promptTitle: 'Prompt de Claude — listo para pegar',
+      copySmall: 'Copiar',
+      loadingPrompt: 'Cargando prompt...',
+      componentTitle: 'Notas de componentes',
+      previewBtn: '◱  Ver vista previa',
+      previewModalTitle: '◱ Vista previa del diseño',
+      colorLabels: { primary:'Primario', secondary:'Secundario', accent:'Acento', background:'Fondo', surface:'Superficie', text:'Texto', textMuted:'Texto tenue', border:'Borde' },
+      typoLabels: { heading:'Título', body:'Cuerpo', mono:'Mono', baseSize:'Tamaño base', scale:'Escala', headingWt:'Peso título', bodyWt:'Peso cuerpo' },
+      spacingLabels: { unit:'Unidad', maxWidth:'Ancho máx.', radius:'Radio', gap:'Separación' },
+      toastCopied: 'Copiado al portapapeles',
+      toastUpdated: 'Estilo actualizado ✓',
+      toastNoChange: 'No se especificaron cambios.',
+      desktopBtn: 'Escritorio',
+      mobileBtn: 'Móvil',
+    },
+    pt: {
+      skillsBadge: n => `${n} estilos de design`,
+      sidebarTitle: 'Estilos de Design',
+      searchPlaceholder: 'Pesquisar estilos...',
+      emptyTitle: 'Selecione um estilo',
+      emptyDesc: 'Escolha um estilo na barra lateral para visualizar cores, tipografia e o prompt pronto para o Claude.',
+      editBtn: '⚙ Editar',
+      copyPromptBtn: 'Copiar prompt',
+      copiedBtn: '✓ Copiado!',
+      editPanelTitle: 'Editar cores e tipografia',
+      headingFontLabel: 'Fonte do título',
+      bodyFontLabel: 'Fonte do corpo',
+      cancelBtn: 'Cancelar',
+      saveBtn: 'Salvar alterações',
+      colorsTitle: 'Paleta de cores',
+      typographyTitle: 'Tipografia',
+      spacingTitle: 'Espaçamento e layout',
+      principlesTitle: 'Princípios de design',
+      promptTitle: 'Prompt Claude — pronto para colar',
+      copySmall: 'Copiar',
+      loadingPrompt: 'Carregando prompt...',
+      componentTitle: 'Notas de componentes',
+      previewBtn: '◱  Ver pré-visualização',
+      previewModalTitle: '◱ Pré-visualização do design',
+      colorLabels: { primary:'Primário', secondary:'Secundário', accent:'Destaque', background:'Fundo', surface:'Superfície', text:'Texto', textMuted:'Texto suave', border:'Borda' },
+      typoLabels: { heading:'Título', body:'Corpo', mono:'Mono', baseSize:'Tamanho base', scale:'Escala', headingWt:'Peso título', bodyWt:'Peso corpo' },
+      spacingLabels: { unit:'Unidade', maxWidth:'Largura máx.', radius:'Raio', gap:'Espaço componente' },
+      toastCopied: 'Copiado para a área de transferência',
+      toastUpdated: 'Estilo atualizado ✓',
+      toastNoChange: 'Nenhuma alteração especificada.',
+      desktopBtn: 'Desktop',
+      mobileBtn: 'Mobile',
+    },
+    it: {
+      skillsBadge: n => `${n} stili design`,
+      sidebarTitle: 'Stili Design',
+      searchPlaceholder: 'Cerca stili...',
+      emptyTitle: 'Seleziona uno stile',
+      emptyDesc: 'Scegli uno stile dalla barra laterale per vedere colori, tipografia e il prompt pronto per Claude.',
+      editBtn: '⚙ Modifica',
+      copyPromptBtn: 'Copia prompt',
+      copiedBtn: '✓ Copiato!',
+      editPanelTitle: 'Modifica colori e tipografia',
+      headingFontLabel: 'Font titolo',
+      bodyFontLabel: 'Font corpo',
+      cancelBtn: 'Annulla',
+      saveBtn: 'Salva modifiche',
+      colorsTitle: 'Palette colori',
+      typographyTitle: 'Tipografia',
+      spacingTitle: 'Spaziatura e layout',
+      principlesTitle: 'Principi di design',
+      promptTitle: 'Prompt Claude — pronto da incollare',
+      copySmall: 'Copia',
+      loadingPrompt: 'Caricamento prompt...',
+      componentTitle: 'Note sui componenti',
+      previewBtn: '◱  Mostra anteprima design',
+      previewModalTitle: '◱ Anteprima design',
+      colorLabels: { primary:'Primario', secondary:'Secondario', accent:'Accento', background:'Sfondo', surface:'Superficie', text:'Testo', textMuted:'Testo attenuato', border:'Bordo' },
+      typoLabels: { heading:'Titolo', body:'Corpo', mono:'Mono', baseSize:'Dimensione base', scale:'Scala', headingWt:'Peso titolo', bodyWt:'Peso corpo' },
+      spacingLabels: { unit:'Unità', maxWidth:'Larghezza max', radius:'Raggio', gap:'Spazio componente' },
+      toastCopied: 'Copiato negli appunti',
+      toastUpdated: 'Stile aggiornato ✓',
+      toastNoChange: 'Nessuna modifica specificata.',
+      desktopBtn: 'Desktop',
+      mobileBtn: 'Mobile',
+    },
+    ru: {
+      skillsBadge: n => `${n} стилей дизайна`,
+      sidebarTitle: 'Стили дизайна',
+      searchPlaceholder: 'Поиск стилей...',
+      emptyTitle: 'Выберите стиль',
+      emptyDesc: 'Выберите стиль на боковой панели, чтобы просмотреть цвета, типографику и готовый промпт для Claude.',
+      editBtn: '⚙ Редактировать',
+      copyPromptBtn: 'Копировать промпт',
+      copiedBtn: '✓ Скопировано!',
+      editPanelTitle: 'Изменить цвета и типографику',
+      headingFontLabel: 'Шрифт заголовка',
+      bodyFontLabel: 'Шрифт текста',
+      cancelBtn: 'Отмена',
+      saveBtn: 'Сохранить',
+      colorsTitle: 'Цветовая палитра',
+      typographyTitle: 'Типографика',
+      spacingTitle: 'Отступы и макет',
+      principlesTitle: 'Принципы дизайна',
+      promptTitle: 'Промпт для Claude — готов к вставке',
+      copySmall: 'Копировать',
+      loadingPrompt: 'Загрузка промпта...',
+      componentTitle: 'Заметки по компонентам',
+      previewBtn: '◱  Показать превью дизайна',
+      previewModalTitle: '◱ Превью дизайна',
+      colorLabels: { primary:'Основной', secondary:'Дополнительный', accent:'Акцент', background:'Фон', surface:'Поверхность', text:'Текст', textMuted:'Приглушённый', border:'Граница' },
+      typoLabels: { heading:'Заголовок', body:'Текст', mono:'Моно', baseSize:'Базовый размер', scale:'Масштаб', headingWt:'Насыщ. заголовка', bodyWt:'Насыщ. текста' },
+      spacingLabels: { unit:'Единица', maxWidth:'Макс. ширина', radius:'Радиус', gap:'Отступ компонента' },
+      toastCopied: 'Скопировано в буфер обмена',
+      toastUpdated: 'Стиль обновлён ✓',
+      toastNoChange: 'Изменения не указаны.',
+      desktopBtn: 'Десктоп',
+      mobileBtn: 'Мобильный',
+    },
+    ja: {
+      skillsBadge: n => `${n} デザインスキル`,
+      sidebarTitle: 'デザインスキル',
+      searchPlaceholder: 'スキルを検索...',
+      emptyTitle: 'デザインスキルを選択',
+      emptyDesc: 'サイドバーからスタイルを選んで、カラー・フォント・Claudeプロンプトを確認しましょう。',
+      editBtn: '⚙ 編集',
+      copyPromptBtn: 'プロンプトをコピー',
+      copiedBtn: '✓ コピー完了！',
+      editPanelTitle: 'カラーとフォントを編集',
+      headingFontLabel: '見出しフォント',
+      bodyFontLabel: '本文フォント',
+      cancelBtn: 'キャンセル',
+      saveBtn: '保存する',
+      colorsTitle: 'カラーパレット',
+      typographyTitle: 'タイポグラフィ',
+      spacingTitle: '余白とレイアウト',
+      principlesTitle: 'デザイン原則',
+      promptTitle: 'Claudeプロンプト — 貼り付け準備完了',
+      copySmall: 'コピー',
+      loadingPrompt: '読み込み中...',
+      componentTitle: 'コンポーネントスタイル',
+      previewBtn: '◱  デザインプレビューを表示',
+      previewModalTitle: '◱ デザインプレビュー',
+      colorLabels: { primary:'プライマリ', secondary:'セカンダリ', accent:'アクセント', background:'背景', surface:'サーフェス', text:'テキスト', textMuted:'控えめなテキスト', border:'ボーダー' },
+      typoLabels: { heading:'見出し', body:'本文', mono:'等幅', baseSize:'基本サイズ', scale:'スケール', headingWt:'見出し太さ', bodyWt:'本文太さ' },
+      spacingLabels: { unit:'単位', maxWidth:'最大幅', radius:'角丸', gap:'コンポーネント間隔' },
+      toastCopied: 'クリップボードにコピーしました',
+      toastUpdated: 'スキルを保存しました ✓',
+      toastNoChange: '変更が指定されていません。',
+      desktopBtn: 'デスクトップ',
+      mobileBtn: 'モバイル',
+    },
+    zh: {
+      skillsBadge: n => `${n} 个设计风格`,
+      sidebarTitle: '设计风格',
+      searchPlaceholder: '搜索风格...',
+      emptyTitle: '选择设计风格',
+      emptyDesc: '从侧边栏选择一个风格，预览颜色、字体和可直接使用的 Claude 提示词。',
+      editBtn: '⚙ 编辑',
+      copyPromptBtn: '复制提示词',
+      copiedBtn: '✓ 已复制！',
+      editPanelTitle: '编辑颜色和字体',
+      headingFontLabel: '标题字体',
+      bodyFontLabel: '正文字体',
+      cancelBtn: '取消',
+      saveBtn: '保存更改',
+      colorsTitle: '色彩方案',
+      typographyTitle: '字体排版',
+      spacingTitle: '间距与布局',
+      principlesTitle: '设计原则',
+      promptTitle: 'Claude 提示词 — 可直接粘贴',
+      copySmall: '复制',
+      loadingPrompt: '加载中...',
+      componentTitle: '组件样式说明',
+      previewBtn: '◱  显示设计预览',
+      previewModalTitle: '◱ 设计预览',
+      colorLabels: { primary:'主色', secondary:'辅助色', accent:'强调色', background:'背景', surface:'表面', text:'文字', textMuted:'次要文字', border:'边框' },
+      typoLabels: { heading:'标题', body:'正文', mono:'等宽', baseSize:'基础尺寸', scale:'比例', headingWt:'标题字重', bodyWt:'正文字重' },
+      spacingLabels: { unit:'单位', maxWidth:'最大宽度', radius:'圆角', gap:'组件间距' },
+      toastCopied: '已复制到剪贴板',
+      toastUpdated: '风格已更新 ✓',
+      toastNoChange: '未指定任何更改。',
+      desktopBtn: '桌面端',
+      mobileBtn: '移动端',
+    },
+    ko: {
+      skillsBadge: n => `${n}개 디자인 스킬`,
+      sidebarTitle: '디자인 스킬',
+      searchPlaceholder: '스킬 검색...',
+      emptyTitle: '디자인 스킬 선택',
+      emptyDesc: '사이드바에서 스타일을 선택하여 색상, 타이포그래피, Claude 프롬프트를 확인하세요.',
+      editBtn: '⚙ 편집',
+      copyPromptBtn: '프롬프트 복사',
+      copiedBtn: '✓ 복사됨!',
+      editPanelTitle: '색상 및 타이포그래피 편집',
+      headingFontLabel: '제목 폰트',
+      bodyFontLabel: '본문 폰트',
+      cancelBtn: '취소',
+      saveBtn: '변경 저장',
+      colorsTitle: '색상 팔레트',
+      typographyTitle: '타이포그래피',
+      spacingTitle: '간격 및 레이아웃',
+      principlesTitle: '디자인 원칙',
+      promptTitle: 'Claude 프롬프트 — 붙여넣기 준비 완료',
+      copySmall: '복사',
+      loadingPrompt: '프롬프트 로딩 중...',
+      componentTitle: '컴포넌트 스타일 메모',
+      previewBtn: '◱  디자인 미리보기',
+      previewModalTitle: '◱ 디자인 미리보기',
+      colorLabels: { primary:'기본색', secondary:'보조색', accent:'강조색', background:'배경', surface:'서피스', text:'텍스트', textMuted:'흐린 텍스트', border:'테두리' },
+      typoLabels: { heading:'제목', body:'본문', mono:'고정폭', baseSize:'기본 크기', scale:'비율', headingWt:'제목 굵기', bodyWt:'본문 굵기' },
+      spacingLabels: { unit:'단위', maxWidth:'최대 너비', radius:'모서리', gap:'컴포넌트 간격' },
+      toastCopied: '클립보드에 복사됨',
+      toastUpdated: '스킬 업데이트 완료 ✓',
+      toastNoChange: '변경 사항이 없습니다.',
+      desktopBtn: '데스크톱',
+      mobileBtn: '모바일',
+    },
+  };
+
+  function t(key) {
+    const d = I18N[currentLang] || I18N.en;
+    return d[key] !== undefined ? d[key] : (I18N.en[key] || key);
+  }
+
+  function applyStaticTranslations() {
+    const d = I18N[currentLang] || I18N.en;
+    document.getElementById('sidebarTitle').textContent = d.sidebarTitle;
+    document.getElementById('searchInput').placeholder = d.searchPlaceholder;
+    document.getElementById('emptyTitle').textContent = d.emptyTitle;
+    document.getElementById('emptyDesc').textContent = d.emptyDesc;
+    document.getElementById('previewModalTitle').textContent = d.previewModalTitle;
+    document.getElementById('btnDesktop').textContent = d.desktopBtn;
+    document.getElementById('btnMobile').textContent = d.mobileBtn;
+    if (allSkills.length) {
+      document.getElementById('skillCountBadge').textContent = d.skillsBadge(allSkills.length);
+    }
+  }
+
+  // ── LANG SWITCHER ──
+  function toggleLangDropdown() {
+    document.getElementById('langBtn').classList.toggle('open');
+    document.getElementById('langDropdown').classList.toggle('open');
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('typeui-lang', lang);
+    const meta = LANGS[lang];
+    document.getElementById('langFlag').textContent = meta.flag;
+    document.getElementById('langCode').textContent = meta.code;
+    document.querySelectorAll('.lang-item').forEach(el => {
+      el.classList.toggle('active', el.getAttribute('onclick') === `setLang('${lang}')`);
+    });
+    document.getElementById('langBtn').classList.remove('open');
+    document.getElementById('langDropdown').classList.remove('open');
+    applyStaticTranslations();
+    if (currentSkill) renderDetail(currentSkill);
+  }
+
+  document.addEventListener('click', e => {
+    if (!document.getElementById('langSwitcher').contains(e.target)) {
+      document.getElementById('langBtn').classList.remove('open');
+      document.getElementById('langDropdown').classList.remove('open');
+    }
+  });
+
+  // ── FETCH & INIT ──
+  async function init() {
+    const res = await fetch('/api/skills');
+    allSkills = await res.json();
+    setLang(currentLang);
+    renderSidebar(allSkills);
+    if (allSkills.length > 0) selectSkill(allSkills[0].slug);
+  }
+
+  // ── SIDEBAR ──
+  function renderSidebar(skills) {
+    const list = document.getElementById('skillList');
+    list.innerHTML = skills.map(s => `
+      <div class="skill-card" id="card-${s.slug}" onclick="selectSkill('${s.slug}')">
+        <div class="skill-card-top">
+          <div class="color-dot" style="background:${s.colors.primary}; box-shadow: 0 0 12px ${s.colors.primary}40"></div>
+          <div>
+            <div class="skill-card-name">${s.name}</div>
+          </div>
+        </div>
+        <div class="skill-card-desc">${s.description}</div>
+        <div class="mood-tags">${s.mood.map(m => `<span class="mood-tag">${m}</span>`).join('')}</div>
+      </div>
+    `).join('');
+  }
+
+  // ── SELECT SKILL ──
+  async function selectSkill(slug) {
+    document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('active'));
+    const card = document.getElementById('card-' + slug);
+    if (card) card.classList.add('active');
+
+    const res = await fetch(`/api/skills/${slug}`);
+    currentSkill = await res.json();
+
+    document.getElementById('emptyState').style.display = 'none';
+    document.getElementById('skillDetail').style.display = 'block';
+    renderDetail(currentSkill);
+  }
+
+  // ── RENDER DETAIL ──
+  function renderDetail(s) {
+    const el = document.getElementById('skillDetail');
+    const palette = [s.colors.primary, s.colors.secondary, s.colors.accent, s.colors.background, s.colors.surface, s.colors.border];
+
+    el.innerHTML = `
+      <!-- HEADER -->
+      <div class="detail-header">
+        <div class="detail-title-area">
+          <div class="detail-name">${s.name}</div>
+          <div class="detail-desc">${s.description}</div>
+        </div>
+        <div class="detail-actions">
+          <button class="btn-outline" onclick="toggleEdit()">${t('editBtn')}</button>
+          <button class="btn-copy" id="copyBtn" onclick="copyPrompt('${s.slug}')">
+            <span>⎘</span> ${t('copyPromptBtn')}
+          </button>
+        </div>
+      </div>
+
+      <!-- COLOR PALETTE STRIP -->
+      <div class="palette-strip" title="Color palette">
+        ${palette.map(c => `<div class="palette-color" style="background:${c}" title="${c}"></div>`).join('')}
+      </div>
+
+      <!-- EDIT PANEL -->
+      <div class="card edit-panel" id="editPanel">
+        <div class="card-title">${t('editPanelTitle')}</div>
+        <div class="edit-grid">
+          ${editField('primary', t('colorLabels').primary, s.colors.primary)}
+          ${editField('secondary', t('colorLabels').secondary, s.colors.secondary)}
+          ${editField('accent', t('colorLabels').accent, s.colors.accent)}
+          ${editField('background', t('colorLabels').background, s.colors.background)}
+          ${editField('surface', t('colorLabels').surface, s.colors.surface)}
+          ${editField('text', t('colorLabels').text, s.colors.text)}
+        </div>
+        <div class="edit-grid" style="margin-top:12px; grid-template-columns:1fr 1fr;">
+          <div class="edit-field">
+            <label>${t('headingFontLabel')}</label>
+            <input class="edit-input" id="edit-headingFont" value="${s.typography.headingFont}">
+          </div>
+          <div class="edit-field">
+            <label>${t('bodyFontLabel')}</label>
+            <input class="edit-input" id="edit-bodyFont" value="${s.typography.bodyFont}">
+          </div>
+        </div>
+        <div class="edit-save-row">
+          <button class="btn-outline" onclick="toggleEdit()">${t('cancelBtn')}</button>
+          <button class="btn-save" onclick="saveEdit('${s.slug}')">${t('saveBtn')}</button>
+        </div>
+      </div>
+
+      <!-- 2-COL GRID -->
+      <div class="detail-grid">
+        <!-- COLORS -->
+        <div class="card">
+          <div class="card-title">${t('colorsTitle')}</div>
+          <div class="color-grid">
+            ${colorRow(t('colorLabels').primary, s.colors.primary)}
+            ${colorRow(t('colorLabels').secondary, s.colors.secondary)}
+            ${colorRow(t('colorLabels').accent, s.colors.accent)}
+            ${colorRow(t('colorLabels').background, s.colors.background)}
+            ${colorRow(t('colorLabels').surface, s.colors.surface)}
+            ${colorRow(t('colorLabels').text, s.colors.text)}
+            ${colorRow(t('colorLabels').textMuted, s.colors.textMuted)}
+            ${colorRow(t('colorLabels').border, s.colors.border)}
+          </div>
+        </div>
+
+        <!-- TYPOGRAPHY + SPACING -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="card">
+            <div class="card-title">${t('typographyTitle')}</div>
+            ${typoRow(t('typoLabels').heading, s.typography.headingFont)}
+            ${typoRow(t('typoLabels').body, s.typography.bodyFont)}
+            ${typoRow(t('typoLabels').mono, s.typography.monoFont)}
+            ${typoRow(t('typoLabels').baseSize, s.typography.baseSize)}
+            ${typoRow(t('typoLabels').scale, s.typography.scaleRatio)}
+            ${typoRow(t('typoLabels').headingWt, s.typography.headingWeight)}
+            ${typoRow(t('typoLabels').bodyWt, s.typography.bodyWeight)}
+          </div>
+          <div class="card">
+            <div class="card-title">${t('spacingTitle')}</div>
+            ${typoRow(t('spacingLabels').unit, s.spacing.unit)}
+            ${typoRow(t('spacingLabels').maxWidth, s.spacing.containerMaxWidth)}
+            ${typoRow(t('spacingLabels').radius, s.spacing.borderRadius)}
+            ${typoRow(t('spacingLabels').gap, s.spacing.componentGap)}
+          </div>
+        </div>
+      </div>
+
+      <!-- DESIGN PRINCIPLES -->
+      <div class="card" style="margin-top:16px;">
+        <div class="card-title">${t('principlesTitle')}</div>
+        ${s.designPrinciples.map(p => `
+          <div class="principle-item">
+            <span class="principle-dot">▸</span>
+            <span>${p}</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- CLAUDE PROMPT -->
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <div class="prompt-title">${t('promptTitle')}</div>
+          <button class="btn-sm" onclick="copyPrompt('${s.slug}')">${t('copySmall')}</button>
+        </div>
+        <div class="prompt-text" id="promptText">${t('loadingPrompt')}</div>
+      </div>
+
+      <!-- COMPONENT STYLE -->
+      <div class="card" style="margin-bottom: 16px;">
+        <div class="card-title">${t('componentTitle')}</div>
+        <p style="font-size:13px; color:var(--text2); line-height:1.7;">${s.componentStyle}</p>
+      </div>
+
+      <!-- PREVIEW BUTTON -->
+      <button class="btn-preview" onclick="openPreview('${s.slug}')">
+        <span class="preview-icon">◱</span>
+        ${t('previewBtn')}
+      </button>
+    `;
+
+    // Load prompt text
+    fetch(`/api/skills/${s.slug}/prompt`)
+      .then(r => r.text())
+      .then(text => { document.getElementById('promptText').textContent = text; });
+  }
+
+  // ── HELPERS ──
+  function colorRow(label, hex) {
+    return `
+      <div class="color-row" onclick="copyToClipboard('${hex}')">
+        <div class="color-swatch" style="background:${hex}; box-shadow: 0 0 8px ${hex}30" title="Click to copy ${hex}"></div>
+        <div class="color-info">
+          <div class="color-label">${label}</div>
+          <div class="color-hex">${hex}</div>
+        </div>
+      </div>`;
+  }
+
+  function typoRow(label, value) {
+    const short = value.length > 28 ? value.split(',')[0] : value;
+    return `
+      <div class="typo-row">
+        <span class="typo-label">${label}</span>
+        <span class="typo-value" title="${value}">${short}</span>
+      </div>`;
+  }
+
+  function editField(key, label, value) {
+    return `
+      <div class="edit-field">
+        <label>${label}</label>
+        <div class="edit-field-row">
+          <div class="edit-color-preview" id="prev-${key}" style="background:${value}"></div>
+          <input class="edit-input" id="edit-${key}" value="${value}"
+            oninput="document.getElementById('prev-${key}').style.background=this.value">
+        </div>
+      </div>`;
+  }
+
+  // ── COPY PROMPT ──
+  async function copyPrompt(slug) {
+    const text = await fetch(`/api/skills/${slug}/prompt`).then(r => r.text());
+    navigator.clipboard.writeText(text);
+    showToast(t('toastCopied'));
+    const btn = document.getElementById('copyBtn');
+    if (btn) {
+      btn.classList.add('copied');
+      btn.innerHTML = `<span>✓</span> ${t('copiedBtn')}`;
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = `<span>⎘</span> ${t('copyPromptBtn')}`;
+      }, 2000);
+    }
+  }
+
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    showToast(t('toastCopied'));
+  }
+
+  // ── TOGGLE EDIT ──
+  function toggleEdit() {
+    const panel = document.getElementById('editPanel');
+    panel.classList.toggle('open');
+  }
+
+  // ── SAVE EDIT ──
+  async function saveEdit(slug) {
+    const colors = {
+      primary: document.getElementById('edit-primary')?.value,
+      secondary: document.getElementById('edit-secondary')?.value,
+      accent: document.getElementById('edit-accent')?.value,
+      background: document.getElementById('edit-background')?.value,
+      surface: document.getElementById('edit-surface')?.value,
+      text: document.getElementById('edit-text')?.value,
+    };
+    const typography = {
+      headingFont: document.getElementById('edit-headingFont')?.value,
+      bodyFont: document.getElementById('edit-bodyFont')?.value,
+    };
+    await fetch(`/api/skills/${slug}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ colors, typography }),
+    });
+    // Reload
+    const res = await fetch(`/api/skills`);
+    allSkills = await res.json();
+    renderSidebar(allSkills);
+    document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('card-' + slug)?.classList.add('active');
+    const updated = await fetch(`/api/skills/${slug}`).then(r => r.json());
+    currentSkill = updated;
+    renderDetail(updated);
+    showToast(t('toastUpdated'));
+  }
+
+  // ── SEARCH ──
+  document.getElementById('searchInput').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    renderSidebar(allSkills.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.mood.some(m => m.includes(q)) ||
+      s.description.toLowerCase().includes(q)
+    ));
+  });
+
+  // ── TOAST ──
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  }
+
+  // ── PREVIEW ──
+  let previewSize = 'desktop';
+
+  function openPreview(slug) {
+    const s = allSkills.find(x => x.slug === slug) || currentSkill;
+    if (!s) return;
+
+    document.getElementById('previewBadge').textContent = s.name;
+    document.getElementById('previewOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderPreviewFrame(s);
+  }
+
+  function closePreview() {
+    document.getElementById('previewOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function overlayClose(e) {
+    if (e.target === document.getElementById('previewOverlay')) closePreview();
+  }
+
+  function setPreviewSize(size) {
+    previewSize = size;
+    const wrap = document.getElementById('previewFrameWrap');
+    document.getElementById('btnDesktop').classList.toggle('active', size === 'desktop');
+    document.getElementById('btnMobile').classList.toggle('active', size === 'mobile');
+    wrap.classList.toggle('mobile', size === 'mobile');
+  }
+
+  function renderPreviewFrame(s) {
+    const frame = document.getElementById('previewFrame');
+    const r = s.spacing.borderRadius;
+    const hasGlass = s.slug === 'glassmorphism';
+    const isRetro = s.slug === 'retro';
+    const isDark = parseInt(s.colors.background.replace('#',''), 16) < 0x888888;
+    const borderStyle = s.slug === 'neo-brutalism'
+      ? `3px solid ${s.colors.border}` : `1px solid ${s.colors.border}`;
+    const shadowStyle = s.slug === 'neo-brutalism'
+      ? `4px 4px 0 ${s.colors.border}` : isDark
+      ? `0 4px 24px rgba(0,0,0,0.4)` : `0 2px 12px rgba(0,0,0,0.08)`;
+    const textGlow = isRetro ? `text-shadow: 0 0 10px ${s.colors.primary}` : '';
+    const scanlines = isRetro ? `
+      body::after {
+        content: '';
+        position: fixed; inset: 0;
+        background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px);
+        pointer-events: none; z-index: 9999;
+      }` : '';
+    const glassCard = hasGlass ? `
+      background: rgba(255,255,255,0.08) !important;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.15) !important;` : '';
+    const bgExtra = hasGlass ? `
+      background: radial-gradient(ellipse at 20% 20%, rgba(124,58,237,0.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.25) 0%, transparent 60%),
+                  ${s.colors.background} !important;` : '';
+    const fontUrl = s.slug === 'retro'
+      ? 'https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap'
+      : s.slug === 'dark-luxury'
+      ? 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap'
+      : s.slug === 'glassmorphism'
+      ? 'https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap'
+      : s.slug === 'neo-brutalism'
+      ? 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap'
+      : 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+
+    const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="${fontUrl}" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  ${scanlines}
+  body {
+    font-family: ${s.typography.bodyFont};
+    background: ${s.colors.background};
+    color: ${s.colors.text};
+    font-size: ${s.typography.baseSize};
+    font-weight: ${s.typography.bodyWeight};
+    ${bgExtra}
+    ${isRetro ? textGlow : ''}
+  }
+  a { color: ${s.colors.primary}; text-decoration: none; }
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: ${hasGlass ? 'rgba(255,255,255,0.05)' : s.colors.surface};
+    border-bottom: ${borderStyle};
+    ${hasGlass ? 'backdrop-filter: blur(20px);' : ''}
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo {
+    font-family: ${s.typography.headingFont};
+    font-weight: ${s.typography.headingWeight};
+    font-size: 20px;
+    color: ${s.colors.text};
+    ${isRetro ? textGlow : ''}
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: ${s.colors.textMuted}; font-weight: 500; }
+  .nav-links a:hover { color: ${s.colors.text}; }
+  .nav-cta {
+    padding: 8px 20px;
+    border-radius: ${r};
+    background: ${s.colors.primary};
+    color: ${isDark ? s.colors.background : '#fff'};
+    font-size: 14px;
+    font-weight: 600;
+    border: ${s.slug === 'neo-brutalism' ? `2px solid ${s.colors.border}` : 'none'};
+    box-shadow: ${s.slug === 'neo-brutalism' ? `3px 3px 0 ${s.colors.border}` : 'none'};
+    cursor: pointer; font-family: inherit;
+    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${s.colors.primary}; color: ${s.colors.primary};` : ''}
+  }
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 96px 48px 80px;
+    max-width: ${s.spacing.containerMaxWidth};
+    margin: 0 auto;
+  }
+  .hero-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: ${s.colors.primary};
+    background: ${hasGlass ? 'rgba(255,255,255,0.08)' : s.colors.surface};
+    border: 1px solid ${s.colors.border};
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    ${isRetro ? textGlow : ''}
+  }
+  h1 {
+    font-family: ${s.typography.headingFont};
+    font-weight: ${s.typography.headingWeight};
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: ${s.colors.text};
+    margin-bottom: 20px;
+    ${isRetro ? textGlow : ''}
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: ${s.colors.textMuted};
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 14px 28px;
+    border-radius: ${r};
+    background: ${s.colors.primary};
+    color: ${isDark ? s.colors.background : '#fff'};
+    font-size: 15px; font-weight: 600;
+    border: ${s.slug === 'neo-brutalism' ? `3px solid ${s.colors.border}` : 'none'};
+    box-shadow: ${shadowStyle};
+    cursor: pointer; font-family: inherit;
+    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${s.colors.primary}; color: ${s.colors.primary};` : ''}
+    ${isRetro ? textGlow : ''}
+  }
+  .btn-secondary {
+    padding: 14px 28px;
+    border-radius: ${r};
+    background: transparent;
+    color: ${s.colors.text};
+    font-size: 15px; font-weight: 500;
+    border: ${borderStyle};
+    box-shadow: ${s.slug === 'neo-brutalism' ? shadowStyle : 'none'};
+    cursor: pointer; font-family: inherit;
+  }
+  /* FEATURES */
+  .features {
+    max-width: ${s.spacing.containerMaxWidth};
+    margin: 0 auto;
+    padding: 64px 48px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: ${s.typography.headingFont};
+    font-weight: ${s.typography.headingWeight};
+    font-size: 32px;
+    color: ${s.colors.text};
+    margin-bottom: 10px;
+    ${isRetro ? textGlow : ''}
+  }
+  .section-sub {
+    text-align: center;
+    font-size: 15px;
+    color: ${s.colors.textMuted};
+    margin-bottom: 40px;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: ${s.spacing.componentGap};
+  }
+  .feature-card {
+    background: ${s.colors.surface};
+    border: ${borderStyle};
+    border-radius: ${r};
+    padding: 28px;
+    box-shadow: ${shadowStyle};
+    ${glassCard}
+  }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: ${r};
+    background: ${s.colors.primary}22;
+    border: 1px solid ${s.colors.primary}44;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: ${s.typography.headingFont};
+    font-weight: ${s.typography.headingWeight};
+    font-size: 17px;
+    color: ${s.colors.text};
+    margin-bottom: 8px;
+    ${isRetro ? textGlow : ''}
+  }
+  .card-body {
+    font-size: 13px;
+    color: ${s.colors.textMuted};
+    line-height: 1.65;
+  }
+  /* STATS */
+  .stats {
+    max-width: ${s.spacing.containerMaxWidth};
+    margin: 0 auto;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: ${s.colors.border};
+    border: ${borderStyle};
+    border-radius: ${r};
+  }
+  .stat {
+    background: ${s.colors.surface};
+    padding: 32px 24px;
+    text-align: center;
+    ${glassCard}
+  }
+  .stat-num {
+    font-family: ${s.typography.headingFont};
+    font-weight: ${s.typography.headingWeight};
+    font-size: 36px;
+    color: ${s.colors.primary};
+    display: block;
+    margin-bottom: 6px;
+    ${isRetro ? textGlow : ''}
+  }
+  .stat-label { font-size: 13px; color: ${s.colors.textMuted}; }
+  /* SECTION WRAPPER */
+  .section-wrapper {
+    background: ${s.colors.surface};
+    border-top: ${borderStyle};
+    border-bottom: ${borderStyle};
+    margin-bottom: 64px;
+    ${hasGlass ? `background: rgba(255,255,255,0.04);` : ''}
+  }
+  /* CTA SECTION */
+  .cta-section {
+    max-width: ${s.spacing.containerMaxWidth};
+    margin: 64px auto;
+    padding: 56px 48px;
+    background: ${s.colors.surface};
+    border: ${borderStyle};
+    border-radius: ${r};
+    box-shadow: ${shadowStyle};
+    text-align: center;
+    ${glassCard}
+  }
+  /* FOOTER */
+  footer {
+    border-top: ${borderStyle};
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: ${s.colors.surface};
+    font-size: 13px;
+    color: ${s.colors.textMuted};
+    ${hasGlass ? `background: rgba(255,255,255,0.04);` : ''}
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { color: ${s.colors.textMuted}; font-size: 13px; }
+  .footer-links a:hover { color: ${s.colors.text}; }
+  /* ACCENT LINE */
+  .accent-line {
+    width: 48px; height: 3px;
+    background: ${s.colors.primary};
+    margin: 0 auto 32px;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">✦ TypeUI</div>
+  <div class="nav-links">
+    <a href="#">Features</a>
+    <a href="#">Docs</a>
+    <a href="#">Pricing</a>
+    <a href="#">Blog</a>
+  </div>
+  <button class="nav-cta">Get Started</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Design Skill: ${s.name}</div>
+  <h1>Build beautiful products,<br>faster than ever</h1>
+  <p class="hero-sub">
+    TypeUI gives you AI-ready design skill files — drop them into Claude and ship
+    stunning interfaces in minutes, not weeks.
+  </p>
+  <div class="hero-btns">
+    <button class="btn-primary">Start for free →</button>
+    <button class="btn-secondary">View all skills</button>
+  </div>
+</section>
+
+<div class="section-wrapper">
+  <section class="features">
+    <h2 class="section-title">Everything you need</h2>
+    <p class="section-sub">Six carefully crafted design styles, ready to use with any AI tool.</p>
+    <div class="accent-line"></div>
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="card-icon">🎨</div>
+        <div class="card-title">Design Tokens</div>
+        <div class="card-body">Colors, fonts, and spacing — all pre-configured and ready for your project.</div>
+      </div>
+      <div class="feature-card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">AI-Ready Prompts</div>
+        <div class="card-body">Paste into Claude and instantly generate complete UI components in this style.</div>
+      </div>
+      <div class="feature-card">
+        <div class="card-icon">✏️</div>
+        <div class="card-title">Fully Editable</div>
+        <div class="card-body">Customize every color, font, and spacing value directly from the CLI or the web UI.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section style="padding: 0 48px 64px; max-width: ${s.spacing.containerMaxWidth}; margin: 0 auto;">
+  <div class="stats">
+    <div class="stat"><span class="stat-num">6+</span><div class="stat-label">Design Skills</div></div>
+    <div class="stat"><span class="stat-num">100%</span><div class="stat-label">Open Source</div></div>
+    <div class="stat"><span class="stat-num">∞</span><div class="stat-label">Customizable</div></div>
+    <div class="stat"><span class="stat-num">1-click</span><div class="stat-label">Copy Prompt</div></div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2 style="font-family:${s.typography.headingFont}; font-size:28px; font-weight:${s.typography.headingWeight}; margin-bottom:12px; ${isRetro ? textGlow : ''}">
+    Ready to build something great?
+  </h2>
+  <p style="color:${s.colors.textMuted}; margin-bottom:28px; font-size:15px;">
+    Pick a design skill and ship your next product today.
+  </p>
+  <button class="btn-primary" style="font-size:15px; padding:14px 32px;">
+    Explore all design skills →
+  </button>
+</div>
+
+<footer>
+  <div style="font-weight:600; color:${s.colors.text}">✦ TypeUI</div>
+  <div class="footer-links">
+    <a href="#">GitHub</a>
+    <a href="#">Docs</a>
+    <a href="#">Twitter</a>
+  </div>
+  <div>© 2024 TypeUI — Design Skill: <strong style="color:${s.colors.primary}">${s.name}</strong></div>
+</footer>
+
+</body>
+</html>`;
+
+    frame.srcdoc = html;
+  }
+
+  // ── ESC to close preview ──
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closePreview();
+  });
+
+  init();
+</script>
+</body>
+</html>

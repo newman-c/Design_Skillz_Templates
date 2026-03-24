@@ -1,0 +1,55 @@
+name: Corporate
+slug: corporate
+version: "1.0.0"
+description: Professional, trustworthy design language for enterprise products and B2B tools
+mood:
+  - professional
+  - trustworthy
+  - structured
+  - reliable
+colors:
+  primary: "#1D4ED8"
+  secondary: "#0F172A"
+  accent: "#0EA5E9"
+  background: "#FFFFFF"
+  surface: "#F8FAFC"
+  text: "#0F172A"
+  textMuted: "#64748B"
+  border: "#E2E8F0"
+typography:
+  headingFont: "DM Sans, system-ui, sans-serif"
+  bodyFont: "DM Sans, system-ui, sans-serif"
+  monoFont: "IBM Plex Mono, monospace"
+  baseSize: "15px"
+  scaleRatio: "1.2"
+  headingWeight: "600"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1280px"
+  sectionPadding: "80px 0"
+  componentGap: "16px"
+  borderRadius: "8px"
+designPrinciples:
+  - "Hierarchy communicates trust: structured layout with clear information flow"
+  - "Blue communicates reliability — use primary for all key actions"
+  - "Dense information design: tables, data, lists are first-class"
+  - "Micro-interactions are subtle: no bouncy animations"
+  - "Accessibility first: 4.5:1 contrast minimum everywhere"
+componentStyle: >
+  Buttons: solid primary blue with slight rounding. Secondary buttons are white
+  with a border. Cards have a #F8FAFC background with a 1px #E2E8F0 border.
+  Tables have alternating row backgrounds. Data badges are pill-shaped in
+  light semantic colors (green for success, red for error, yellow for warning).
+  Navigation has a white top bar with border-bottom. Side nav uses subtle
+  active state highlighting with primary blue.
+prompt: >
+  Build this enterprise/corporate product UI. Use a clean white background
+  with primary blue #1D4ED8 for all key CTAs, links, and active states.
+  Typography is DM Sans, structured and dense — this is a data-rich product.
+  Cards use a very light grey surface (#F8FAFC) with clean 1px borders.
+  Tables, lists, and data displays are high priority — make them scannable.
+  Buttons are solid blue (primary) or outlined (secondary). No gradients.
+  Subtle hover states only. Design for long work sessions: low visual fatigue,
+  high information density. Think Salesforce, Jira, Linear, or HubSpot.
+exampleUseCase: "CRM, analytics dashboard, admin panel, B2B SaaS, internal tool"

@@ -1,0 +1,53 @@
+name: Minimal
+slug: minimal
+version: "1.0.0"
+description: Clean whitespace-first design with precise typography and zero visual noise
+mood:
+  - clean
+  - focused
+  - modern
+  - spacious
+colors:
+  primary: "#111111"
+  secondary: "#444444"
+  accent: "#0070F3"
+  background: "#FFFFFF"
+  surface: "#F9F9F9"
+  text: "#111111"
+  textMuted: "#888888"
+  border: "#EBEBEB"
+typography:
+  headingFont: "Inter, system-ui, sans-serif"
+  bodyFont: "Inter, system-ui, sans-serif"
+  monoFont: "JetBrains Mono, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.25"
+  headingWeight: "700"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1100px"
+  sectionPadding: "96px 0"
+  componentGap: "24px"
+  borderRadius: "6px"
+designPrinciples:
+  - "Every element must earn its place — remove anything that doesn't serve the content"
+  - "Whitespace is a design element, not empty space"
+  - "Typography carries the entire visual weight"
+  - "One accent color maximum, used sparingly"
+  - "Grid is invisible but always present"
+componentStyle: >
+  Buttons are flat or outlined, never with gradients or shadows. Cards use
+  subtle borders (#EBEBEB) with no box-shadows. Inputs have a simple 1px
+  border that highlights on focus with the accent color. No decorative icons.
+  Navigation is text-only. Hero sections rely entirely on typography hierarchy.
+prompt: >
+  Build this interface in a minimal design style. Use a strict white (#FFFFFF)
+  background with near-black (#111111) text. Every element should have generous
+  whitespace — sections breathe, nothing feels crowded. Typography is the hero:
+  use large, bold headings contrasted against lightweight body text.
+  The only color accent is #0070F3, used only on primary CTAs and links.
+  No decorative elements, gradients, or shadows. All UI components (buttons,
+  cards, inputs) use clean lines and subtle borders. The grid is tight and
+  consistent. Think Vercel, Linear, or Notion in aesthetic.
+exampleUseCase: "SaaS landing page, developer tool, portfolio, documentation site"

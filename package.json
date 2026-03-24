@@ -1,0 +1,29 @@
+{
+  "name": "typeui",
+  "version": "1.0.0",
+  "description": "Design Skill Files — AI-ready style themes for building websites with Claude",
+  "main": "dist/cli.js",
+  "bin": {
+    "typeui": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "web": "ts-node src/server.ts",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "express": "^4.19.2",
+    "js-yaml": "^4.1.0",
+    "inquirer": "^9.2.15"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

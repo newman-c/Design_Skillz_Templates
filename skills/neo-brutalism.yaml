@@ -1,0 +1,50 @@
+name: Neo-Brutalism
+slug: neo-brutalism
+version: 1.0.0
+description: Bold borders, hard shadows, flat fills, and raw unapologetic UI energy
+mood:
+  - bold
+  - playful
+  - loud
+  - raw
+colors:
+  primary: '#FFE500'
+  secondary: '#FF6B6B'
+  accent: '#00C8FF'
+  background: '#FFFEF0'
+  surface: '#FFFFFF'
+  text: '#000000'
+  textMuted: '#333333'
+  border: '#000000'
+typography:
+  headingFont: Space Grotesk, sans-serif
+  bodyFont: DM Sans, sans-serif
+  monoFont: JetBrains Mono, monospace
+  baseSize: 17px
+  scaleRatio: '1.333'
+  headingWeight: '800'
+  bodyWeight: '500'
+spacing:
+  unit: 8px
+  containerMaxWidth: 1200px
+  sectionPadding: 80px 0
+  componentGap: 20px
+  borderRadius: 4px
+designPrinciples:
+  - 3-4px solid black borders on almost every element
+  - 'Hard offset box-shadows (4px 4px 0 #000) instead of soft shadows'
+  - Flat bright fills — yellow, coral, cyan — never gradients
+  - Typography is heavy and unapologetic
+  - Hover states shift the element 2px offsetting the shadow
+componentStyle: >
+  All cards, buttons, and containers have a 3px solid black border with a hard drop shadow (4px 4px 0 #000). On hover,
+  elements translate(2px, 2px) and the shadow shrinks. Button fills use the primary yellow or secondary coral. Inputs
+  have the same heavy border treatment. Section backgrounds alternate between the pale yellow background and pure white.
+prompt: >
+  Build this UI in Neo-Brutalist style. Every card, button, modal, and container must have a 3px solid black border with
+  a hard offset box-shadow of 4px 4px 0 #000000. Flat bright fills — primary yellow #FFE500, coral #FF6B6B, cyan #00C8FF
+  — no gradients anywhere. Background is an off-white #FFFEF0. Typography is bold and oversized; headings use Space
+  Grotesk Extra Bold. Hover states must shift elements 2px (translate) and reduce the shadow offset. Think Figma's
+  playground, Gumroad's 2022 redesign, or Pitch's marketing site. Keep energy high, nothing should feel polished or
+  corporate.
+exampleUseCase: Creative portfolio, startup landing page, design tool, indie product

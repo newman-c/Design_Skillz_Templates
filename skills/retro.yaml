@@ -1,0 +1,54 @@
+name: Retro
+slug: retro
+version: "1.0.0"
+description: 80s-inspired terminal aesthetics with scanlines, phosphor glows, and CRT vibes
+mood:
+  - nostalgic
+  - geeky
+  - atmospheric
+  - niche
+colors:
+  primary: "#39FF14"
+  secondary: "#FF6600"
+  accent: "#00FFFF"
+  background: "#0A0A0A"
+  surface: "#111111"
+  text: "#39FF14"
+  textMuted: "#2AB80E"
+  border: "#1A3A1A"
+typography:
+  headingFont: "VT323, monospace"
+  bodyFont: "Share Tech Mono, monospace"
+  monoFont: "Share Tech Mono, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.2"
+  headingWeight: "400"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "960px"
+  sectionPadding: "64px 0"
+  componentGap: "16px"
+  borderRadius: "0px"
+designPrinciples:
+  - "Everything is monospace — no humanist or display fonts"
+  - "Terminal green (#39FF14) on near-black — phosphor glow effect with text-shadow"
+  - "Zero border radius — corners are always sharp"
+  - "ASCII art and box-drawing characters as decoration"
+  - "Scanline overlay with CSS repeating-linear-gradient for texture"
+componentStyle: >
+  Buttons look like terminal commands: [  EXECUTE  ] with square brackets.
+  Cards are ASCII box-drawing bordered panels. Inputs look like terminal prompts
+  with a blinking cursor. All text has a subtle green text-shadow for phosphor
+  glow. Background has a scanline CSS overlay. Section dividers are rows of
+  dashes or equals signs. Numbers and data use large VT323 font.
+prompt: >
+  Build this UI with a retro CRT terminal aesthetic. Background is near-black
+  #0A0A0A. All text is phosphor green #39FF14 with a subtle glow (text-shadow:
+  0 0 10px #39FF14). Every font is monospace — use VT323 for headings,
+  Share Tech Mono for body. Zero border radius anywhere.
+  Buttons use ASCII bracket style: [ BUTTON TEXT ]. Cards use box-drawing
+  characters for borders. Add a CSS scanline overlay using repeating-linear-gradient.
+  ASCII dividers between sections. Think old-school hacker terminal, Matrix
+  raining code aesthetic, or a retro game UI. Keep it atmospheric and moody.
+exampleUseCase: "Developer tool, game, hacker aesthetic portfolio, CTF platform, CLI docs site"

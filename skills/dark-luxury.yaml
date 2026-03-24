@@ -1,0 +1,56 @@
+name: Dark Luxury
+slug: dark-luxury
+version: "1.0.0"
+description: High-end dark mode with gold accents, editorial typography, and premium feel
+mood:
+  - luxurious
+  - editorial
+  - sophisticated
+  - dark
+colors:
+  primary: "#C9A84C"
+  secondary: "#8B7355"
+  accent: "#E8D5A3"
+  background: "#0C0C0C"
+  surface: "#161616"
+  text: "#F5F0E8"
+  textMuted: "#8C8480"
+  border: "#2A2520"
+typography:
+  headingFont: "Playfair Display, Georgia, serif"
+  bodyFont: "Lato, system-ui, sans-serif"
+  monoFont: "JetBrains Mono, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.333"
+  headingWeight: "700"
+  bodyWeight: "300"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1100px"
+  sectionPadding: "120px 0"
+  componentGap: "32px"
+  borderRadius: "2px"
+designPrinciples:
+  - "Deep near-black backgrounds — never pure #000, always a warm near-black"
+  - "Gold is precious — use sparingly for key hierarchy moments only"
+  - "Serif headings paired with lightweight sans-serif body create editorial contrast"
+  - "Generous whitespace signals luxury — nothing is cramped"
+  - "Photography and imagery are dominant — UI steps aside"
+componentStyle: >
+  Buttons: minimal outlined style with gold border and gold text — no fills.
+  Cards: surface color (#161616) with a warm gold-tinted top border accent line.
+  Inputs: dark background with subtle warm border, light cream text.
+  Dividers: thin gold lines (1px, 30% opacity). Section headings use
+  Playfair Display in large sizes. Body copy is light (font-weight 300) in
+  warm off-white #F5F0E8 for warmth, not pure white.
+prompt: >
+  Build this interface in a Dark Luxury editorial style. Background is a warm
+  near-black #0C0C0C, surface elements use #161616. All headings use Playfair
+  Display serif font — large, bold, commanding. Body text is Lato Light at
+  font-weight 300, color #F5F0E8 (warm off-white, not pure white).
+  The only accent is gold #C9A84C — use it only for key UI moments: primary
+  CTAs, active nav items, hover underlines, decorative lines.
+  Buttons are outlined with gold border. No rounded corners — 2px max radius.
+  Enormous whitespace between sections. This is an editorial, luxury brand
+  experience. Think high-end fashion house, luxury hotel, or art gallery website.
+exampleUseCase: "Luxury brand, fashion, hotel, gallery, premium editorial, high-end portfolio"

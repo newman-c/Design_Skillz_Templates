@@ -1,0 +1,44 @@
+name: My Custom Skill
+slug: my-custom-skill
+version: "1.0.0"
+description: Describe the mood and purpose of this design style in one sentence
+mood:
+  - tag1
+  - tag2
+  - tag3
+colors:
+  primary: "#000000"
+  secondary: "#444444"
+  accent: "#0070F3"
+  background: "#FFFFFF"
+  surface: "#F5F5F5"
+  text: "#111111"
+  textMuted: "#888888"
+  border: "#E5E5E5"
+typography:
+  headingFont: "Inter, system-ui, sans-serif"
+  bodyFont: "Inter, system-ui, sans-serif"
+  monoFont: "JetBrains Mono, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.25"
+  headingWeight: "700"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1200px"
+  sectionPadding: "80px 0"
+  componentGap: "24px"
+  borderRadius: "8px"
+designPrinciples:
+  - "First design principle"
+  - "Second design principle"
+  - "Third design principle"
+componentStyle: >
+  Describe how buttons, cards, inputs, and other UI components
+  should look and feel in this style.
+prompt: >
+  This is the AI prompt that will be given to Claude.
+  Describe the full design style here — colors, fonts, spacing,
+  component styles, and the overall aesthetic. Be specific so
+  Claude builds exactly the right look.
+exampleUseCase: "List of ideal project types that fit this design style"
