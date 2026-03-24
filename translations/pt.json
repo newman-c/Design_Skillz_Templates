@@ -1,0 +1,170 @@
+{
+  "minimal": {
+    "description": "Design limpo centrado no espaço em branco, com tipografia precisa e zero ruído visual",
+    "mood": ["limpo", "focado", "moderno", "espaçoso"],
+    "designPrinciples": [
+      "Cada elemento deve merecer seu lugar — remover tudo que não serve ao conteúdo",
+      "O espaço em branco é um elemento de design, não espaço vazio",
+      "A tipografia carrega todo o peso visual",
+      "Uma cor de destaque no máximo, usada com moderação",
+      "A grade é invisível mas sempre presente"
+    ],
+    "componentStyle": "Os botões são planos ou com contorno, nunca com gradientes ou sombras. Os cards usam bordas sutis sem box-shadow. Os campos de entrada têm uma borda simples de 1px que se destaca ao focar com a cor de acento. Sem ícones decorativos. A navegação é apenas texto. As seções hero dependem inteiramente da hierarquia tipográfica.",
+    "prompt": "Construa esta interface em um estilo de design minimalista. Use um fundo branco rigoroso com texto quase preto. Cada elemento deve ter espaço em branco generoso — as seções respiram, nada parece apertado. A tipografia é a protagonista: use títulos grandes e em negrito contrastados com texto de corpo leve. O único acento de cor é usado apenas em CTAs primários e links. Sem elementos decorativos, gradientes ou sombras. Todos os componentes de UI usam linhas limpas e bordas sutis. A grade é rigorosa e consistente. Pense em Vercel, Linear ou Notion como estética.",
+    "exampleUseCase": "Página de entrada SaaS, ferramenta para desenvolvedores, portfólio, site de documentação"
+  },
+  "corporate": {
+    "description": "Linguagem de design profissional e confiável para produtos corporativos e ferramentas B2B",
+    "mood": ["profissional", "confiável", "estruturado", "sólido"],
+    "designPrinciples": [
+      "A hierarquia comunica confiança: layout estruturado com fluxo de informações claro",
+      "O azul comunica confiabilidade — usar em todas as ações principais",
+      "Design denso em informações: tabelas, dados e listas são prioridade",
+      "As micro-interações são sutis: sem animações saltitantes",
+      "Acessibilidade primeiro: contraste mínimo de 4,5:1 em todo lugar"
+    ],
+    "componentStyle": "Botões: azul primário sólido com leve arredondamento. Os botões secundários são brancos com borda. Os cards têm fundo claro com borda de 1px. As tabelas têm fundos de linha alternados. Os emblemas de dados são em formato pill em cores semânticas claras.",
+    "prompt": "Construa esta UI de produto corporativo. Use um fundo branco limpo com azul primário para todos os CTAs principais, links e estados ativos. A tipografia é estruturada e densa — este é um produto rico em dados. Os cards usam uma superfície cinza muito claro com bordas de 1px limpas. Tabelas, listas e exibições de dados são alta prioridade — torná-los facilmente varríveis. Os botões são azul sólido (primário) ou com contorno (secundário). Sem gradientes. Projetar para sessões de trabalho longas: baixa fadiga visual, alta densidade de informações. Pense em Salesforce, Jira, Linear ou HubSpot.",
+    "exampleUseCase": "CRM, painel de análise, painel de administração, SaaS B2B, ferramenta interna"
+  },
+  "dark-luxury": {
+    "description": "Dark mode de alta linha com acentos dourados, tipografia editorial e sensação premium",
+    "mood": ["luxuoso", "editorial", "sofisticado", "sombrio"],
+    "designPrinciples": [
+      "Fundos quase negros profundos — nunca preto puro, sempre um quase-negro cálido",
+      "O ouro é precioso — usar com moderação apenas em momentos-chave de hierarquia",
+      "Títulos serif combinados com corpo de texto sans-serif leve criam contraste editorial",
+      "Espaço em branco generoso sinaliza luxo — nada está apertado",
+      "A fotografia e as imagens dominam — a UI se afasta"
+    ],
+    "componentStyle": "Botões: estilo contorno minimal com borda dourada e texto dourado — sem preenchimentos. Os cards têm superfície escura com uma linha de acento dourada quente no topo. Os campos de entrada são escuros com borda quente sutil. Os divisores são linhas douradas finas. Os títulos de seção usam uma fonte serif grande.",
+    "prompt": "Construa esta interface em um estilo Dark Luxury editorial. O fundo é quase-negro cálido. Todos os títulos usam a fonte serif Playfair Display — grande, em negrito, imponente. O texto do corpo é de peso leve em branco-sujo cálido. O único acento é o ouro — usar apenas para momentos UI chave: CTAs primários, itens de navegação ativos, sublinhados no hover, linhas decorativas. Os botões são com contorno e borda dourada. Sem cantos arredondados. Enorme espaço em branco entre as seções. Pense em uma casa de moda de luxo, um hotel de luxo ou uma galeria de arte.",
+    "exampleUseCase": "Marca de luxo, moda, hotel, galeria, editorial premium, portfólio de alta linha"
+  },
+  "glassmorphism": {
+    "description": "Superfícies de vidro fosco com gradientes vibrantes, efeitos de desfoque e profundidade luminosa",
+    "mood": ["futurista", "premium", "etéreo", "vibrante"],
+    "designPrinciples": [
+      "Os fundos são escuros com ricas malhas de gradiente de roxo a azul",
+      "Os cards usam backdrop-filter blur com superfície branca rgba",
+      "Uma borda branca sutil separa o vidro do fundo",
+      "Elementos brilhantes: drop-shadows coloridos combinando com o acento",
+      "O conteúdo é sempre texto claro sobre vidro escuro"
+    ],
+    "componentStyle": "Os cards usam backdrop-filter blur, fundo branco rgba e borda branca sutil. Os botões usam preenchimentos de gradiente com um brilho suave. Os campos de entrada têm fundo de vidro. O fundo tem grandes orbes de gradiente radial desfocados em roxo e ciano.",
+    "prompt": "Construa esta interface usando Glassmorphism. O fundo é azul-marinho escuro profundo com grandes orbes de gradiente desfocados como decoração de fundo. Todos os cards e painéis de UI devem usar backdrop-filter blur, superfície branca rgba e borda sutil. O texto é branco puro ou branco semi-transparente para elementos atenuados. Os botões usam preenchimentos de gradiente com brilho correspondente. Pense nos slides da WWDC da Apple, na página inicial com gradientes da Stripe ou nos widgets do iOS. Premium, futurista, luminoso.",
+    "exampleUseCase": "App Web3, produto de IA, plataforma musical, painel SaaS premium"
+  },
+  "neo-brutalism": {
+    "description": "Bordas grossas, sombras duras, preenchimentos planos e energia de UI crua e sem desculpas",
+    "mood": ["ousado", "lúdico", "barulhento", "bruto"],
+    "designPrinciples": [
+      "Bordas pretas sólidas de 3 a 4px em quase todos os elementos",
+      "Sombras de deslocamento duro em vez de sombras suaves",
+      "Preenchimentos planos e vibrantes — amarelo, coral, ciano — nunca gradientes",
+      "A tipografia é pesada e sem desculpas",
+      "Os estados hover deslocam o elemento 2px compensando a sombra"
+    ],
+    "componentStyle": "Todos os cards, botões e contêineres têm uma borda preta sólida grossa com uma sombra de queda dura. Ao passar o cursor, os elementos se transladam e a sombra se reduz. Os preenchimentos de botões usam amarelo primário ou coral secundário. Os campos de entrada têm o mesmo tratamento de borda pesada.",
+    "prompt": "Construa esta UI em estilo Neo-Brutalista. Cada card, botão, modal e contêiner deve ter uma borda preta sólida grossa com uma sombra de deslocamento duro. Preenchimentos planos vibrantes — amarelo, coral, ciano — sem gradientes em nenhum lugar. A tipografia é em negrito e superdimensionada. Os estados hover devem deslocar os elementos 2px e reduzir o deslocamento da sombra. Pense no playground do Figma, no redesign do Gumroad ou no site de marketing do Pitch. Manter a energia alta, nada deve parecer polido ou corporativo.",
+    "exampleUseCase": "Portfólio criativo, página de entrada de startup, ferramenta de design, produto independente"
+  },
+  "retro": {
+    "description": "Estética de terminal dos anos 80 com scanlines, brilhos de fósforo e vibes CRT",
+    "mood": ["nostálgico", "nerd", "atmosférico", "de nicho"],
+    "designPrinciples": [
+      "Tudo é monoespaçado — sem fontes humanistas ou de display",
+      "Verde terminal sobre quase-preto — efeito de brilho de fósforo com text-shadow",
+      "Zero border-radius — os cantos são sempre nítidos",
+      "Arte ASCII e caracteres de box-drawing como decoração",
+      "Sobreposição de scanlines com CSS para textura"
+    ],
+    "componentStyle": "Os botões parecem comandos de terminal com colchetes. Os cards são painéis com bordas de box-drawing ASCII. Os campos de entrada parecem prompts de terminal com cursor piscando. Todo o texto tem um text-shadow verde sutil para o brilho de fósforo. O fundo tem uma sobreposição CSS de scanlines.",
+    "prompt": "Construa esta UI com uma estética de terminal CRT retrô. O fundo é quase-preto. Todo o texto é verde fósforo com brilho sutil. Cada fonte é monoespaçada. Zero border-radius em nenhum lugar. Os botões usam estilo de colchete ASCII. Os cards usam caracteres box-drawing para bordas. Adicione uma sobreposição CSS de scanlines. Pense em um velho terminal hacker, na estética Matrix ou em uma UI de jogo retrô. Manter atmosférico e sombrio.",
+    "exampleUseCase": "Ferramenta para desenvolvedores, jogo, portfólio de estética hacker, plataforma CTF, site de documentação CLI"
+  },
+  "cyberpunk": {
+    "description": "UI distópica encharcada de neon com efeitos de glitch, scanlines e contraste elétrico",
+    "mood": ["elétrico", "sombrio", "futurista", "perigoso"],
+    "designPrinciples": [
+      "Brilhos neon em tudo — text-shadow e box-shadow em vermelho, ciano, amarelo",
+      "Cortes angulares: clip-path em cards e botões",
+      "Animação de glitch: elemento duplicado com deslocamento e mudança de cor ao hover",
+      "Fundos de espaço profundo escuro com sobreposição de textura de ruído sutil",
+      "Alto contraste — neon apenas sobre quase-preto"
+    ],
+    "componentStyle": "Os botões usam cortes de polígono clip-path com brilho de borda neon. Os cards têm borda neon com brilho box-shadow da cor correspondente. Os títulos têm duplicatas de glitch text-shadow em vermelho ou ciano. Os fundos de seção usam textura de ruído escuro.",
+    "prompt": "Construa esta UI em estilo Cyberpunk. O fundo é profundamente escuro, quase preto com tom azul. Todos os acentos neon: vermelho primário, ciano, amarelo. Os títulos usam fonte angular com text-shadow luminoso. Os botões e cards têm cantos angulares nítidos via clip-path, com borda neon e brilho box-shadow correspondente. Adicione animação CSS de glitch ao hover. A tipografia é angular e compacta. Pense na UI de Cyberpunk 2077, nos terminais de Blade Runner 2049 ou nos HUDs de Ghost in the Shell. Alta energia, alto contraste.",
+    "exampleUseCase": "UI de jogo, startup de tecnologia, dApp crypto/Web3, plataforma de esports, portfólio sci-fi"
+  },
+  "vaporwave": {
+    "description": "Estética retrô-internet nostálgica dos anos 80/90 com gradientes rosa-roxo e pisos de grade",
+    "mood": ["nostálgico", "onírico", "surreal", "pastel"],
+    "designPrinciples": [
+      "Gradientes de rosa a roxo em fundos, botões e títulos",
+      "Piso de grade em perspectiva como decoração de fundo da seção hero",
+      "Efeito de texto cromado/reflexivo nos títulos principais",
+      "Brilhos suaves em rosa e hortelã — nada é nítido ou duro",
+      "Elementos decorativos em estilo VHS retrô: scanlines, estática, dupla exposição"
+    ],
+    "componentStyle": "Os cards têm fundo semitransparente com tom roxo e borda de gradiente rosa. Os botões são formas pill preenchidas de gradiente com brilho suave. Os títulos usam efeito de texto gradiente do rosa ao roxo. A seção hero tem uma grade de perspectiva CSS que se afasta em direção ao horizonte.",
+    "prompt": "Construa esta UI em estética Vaporwave. O fundo é roxo profundo com um bloom de gradiente radial luminoso rosa-a-roxo atrás do conteúdo hero. Todos os títulos usam efeito de texto gradiente de rosa a roxo. Os botões são formas pill preenchidas de gradiente com brilho rosa suave. Os cards têm superfície roxa semitransparente com borda de gradiente. Incluir uma grade de perspectiva 3D CSS no hero. O verde-hortelã é usado como acento de contraste para os CTAs. Onírico, nebuloso, nostálgico. Pense em Windows 95 encontrando Miami Beach ao pôr do sol.",
+    "exampleUseCase": "Plataforma musical, portfólio criativo, jogo indie, blog temático retrô, projeto de arte"
+  },
+  "bauhaus": {
+    "description": "Modernismo geométrico com cores primárias, grades rígidas e zero ornamentação",
+    "mood": ["geométrico", "ousado", "sistemático", "atemporal"],
+    "designPrinciples": [
+      "Apenas três cores: vermelho, azul, amarelo — mais preto e branco-sujo",
+      "Zero border-radius — todas as formas são estritamente retangulares",
+      "A geometria como decoração: círculos, triângulos, retângulos como blocos visuais",
+      "A tipografia é estrutural: os grandes títulos condensados agem como elementos de design",
+      "A grade é sagrada — tudo se alinha a um sistema modular rígido"
+    ],
+    "componentStyle": "Os botões são retângulos planos — preenchimento vermelho ou azul sólido, texto preto, raio zero. Os cards usam bordas pretas de 2px com preenchimento branco plano. Os blocos de cor servem como âncoras visuais. As formas geométricas são usadas como divisores decorativos de seção. Sem sombras, sem gradientes, sem decoração.",
+    "prompt": "Construa esta UI seguindo os princípios de design Bauhaus. O fundo é um creme quente. A tipografia usa fonte condensada em negrito para todos os títulos — tratando o texto como forma visual. Usar apenas três cores de acento: vermelho, azul, amarelo. Zero border-radius em todo lugar. Bordas pretas de 2px em todos os contêineres. Usar formas geométricas como elementos decorativos e divisores de seção. Sem sombras, sem gradientes, sem enfeites decorativos. A forma pura segue a função. Pense nos pôsteres tipográficos de Herbert Bayer ou nas grades de Mondrian.",
+    "exampleUseCase": "Agência de design, empresa de arquitetura, escola de arte, museu, marca modernista"
+  },
+  "cottagecore": {
+    "description": "Calor orgânico suave com texturas botânicas, vibes de desenho à mão e pastéis terrosos",
+    "mood": ["cálido", "aconchegante", "orgânico", "suave"],
+    "designPrinciples": [
+      "Brancos-sujos cremosos e cálidos — nunca branco puro, sempre envelhecido e suave",
+      "Verde terroso e terracota como única família de acento",
+      "Formas orgânicas: bordas ligeiramente imperfeitas, SVGs blob como fundos",
+      "Tipografia serif ao longo de tudo — editorial e cálida, nunca sans-serif geométrico",
+      "Imagens botânicas: folhas, flores, ervas como motivos decorativos"
+    ],
+    "componentStyle": "Os botões são pílulas suavemente arredondadas em verde-sálvia apagado ou terracota. Os cards usam uma superfície de pergaminho quente com borda suave e sombra leve. Os campos de entrada têm um sublinhado em estilo manuscrito ou borda suavemente arredondada. Desenhos de linha SVG botânicos decorativos usados como divisores de seção.",
+    "prompt": "Construa esta UI em uma estética Cottagecore. O fundo é creme cálido — envelhecido, suave, nunca branco clínico. Toda a tipografia é serif: grandes títulos elegantes e literários, texto de corpo cálido. As cores são terrosas: verde-sálvia, marrom cálido, terracota. Os botões são formas pill arredondadas sem bordas duras. Os cards têm superfície de pergaminho com sombras suaves. Usar decorações SVG de inspiração botânica como divisores de seção ou textura de fundo. Tudo deve parecer artesanal, cálido e natural — como um belo livro de receitas antigo ou um diário de jardim de campo.",
+    "exampleUseCase": "Blog de culinária, marca de bem-estar, loja artesanal, plataforma de estilo de vida, site de receitas"
+  },
+  "swiss-international": {
+    "description": "Disciplina de grade da era Helvetica — acentos vermelhos intensos, alinhamento rigoroso, zero sentimento",
+    "mood": ["disciplinado", "autoritário", "austero", "preciso"],
+    "designPrinciples": [
+      "A grade é lei — cada elemento se encaixa em um sistema de colunas modulares rigoroso",
+      "O vermelho é um sinal, não decoração — usar apenas para hierarquia e atenção",
+      "Apenas Helvetica ou sans-serif do sistema — fontes serif são proibidas",
+      "O espaço em branco comunica confiança — resistir ao impulso de preenchê-lo",
+      "Layouts assimétricos com grande espaço negativo são preferidos à simetria"
+    ],
+    "componentStyle": "Todas as bordas são 1-2px solid preto. Os botões são preenchimentos pretos planos com texto branco ou com contorno preto. Os cards são caixas brancas com borda preta — sem raio, sem sombra. O vermelho é reservado para CTA primário, estado ativo e rótulos críticos. Grandes números tipográficos ou citações em destaque servem como decoração de seção.",
+    "prompt": "Construa esta UI no Estilo Tipográfico Internacional Suíço. O fundo é branco puro. A fonte é exclusivamente Helvetica Neue ou sans-serif do sistema. O vermelho é usado apenas para botões CTA primários, estados ativos e linhas de acento estruturais. Todo o resto é preto, branco ou cinza. Zero border-radius. Bordas pretas em todos os contêineres. O layout segue uma grade de múltiplas colunas rigorosa — assimétrica, disciplinada. Grandes números de título pretos usados como âncoras visuais. Sem gradientes, sem texturas, sem formas decorativas. Pense nas grades de pôsteres de Müller-Brockmann ou na estética do documentário Helvetica.",
+    "exampleUseCase": "Estúdio de design, arquitetura, revista editorial, museu, agência de identidade de marca"
+  },
+  "biopunk": {
+    "description": "Biomecânica orgânica sombria — superfícies úmidas, verdes tóxicos, padrões de DNA, UI viva",
+    "mood": ["orgânico", "sombrio", "experimental", "perturbador"],
+    "designPrinciples": [
+      "Border-radius assimétrico: cantos orgânicos em forma de blob",
+      "Brilhos neon verde tóxico em elementos UI chave",
+      "Padrões de fundo SVG: hélices de DNA, grades celulares, híbridos circuito-orgânico",
+      "Efeito de superfície úmida/brilhante usando sobreposição de gradiente sutil nos cards",
+      "Tudo parece vivo: animações de pulso respiratório em componentes chave"
+    ],
+    "componentStyle": "Os cards usam border-radius assimétrico com superfície verde escuro e brilho interno sutil. Os botões têm forma orgânica com animação de brilho pulsante. As bordas são verde escuro, frequentemente pontilhadas ou tracejadas sugerindo estrutura celular. O fundo tem um padrão de grade hexagonal SVG.",
+    "prompt": "Construa esta UI em um estilo de design Biopunk. O fundo é quase-preto com tom verde profundo. Todas as superfícies são verde orgânico escuro. O verde neon tóxico é a cor primária — usado para brilhos, destaques de texto e elementos UI chave com forte brilho box-shadow. Use border-radius assimétrico em todos os cards e botões para criar uma sensação orgânica e viva. Adicione uma grade hexagonal SVG CSS como padrão de fundo. Os títulos são pesados e angulares, o texto do corpo é clínico e semelhante a dados. Anime os elementos chave com um keyframe de pulso respiratório lento no brilho verde. Pense na estética do filme Annihilation, na UI do jogo SOMA ou nas interfaces de laboratório genético biopunk.",
+    "exampleUseCase": "Startup de biotech, jogo sci-fi, ferramenta de pesquisa genética, arte experimental, estética de terror"
+  }
+}

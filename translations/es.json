@@ -1,0 +1,170 @@
+{
+  "minimal": {
+    "description": "Diseño limpio centrado en el espacio en blanco, con tipografía precisa y cero ruido visual",
+    "mood": ["limpio", "enfocado", "moderno", "espacioso"],
+    "designPrinciples": [
+      "Cada elemento debe ganarse su lugar — eliminar todo lo que no sirva al contenido",
+      "El espacio en blanco es un elemento de diseño, no espacio vacío",
+      "La tipografía carga todo el peso visual",
+      "Un color de acento máximo, usado con moderación",
+      "La cuadrícula es invisible pero siempre está presente"
+    ],
+    "componentStyle": "Los botones son planos o con contorno, nunca con degradados o sombras. Las tarjetas usan bordes sutiles sin box-shadow. Los campos de entrada tienen un borde simple de 1px que resalta al enfocarse con el color de acento. Sin iconos decorativos. La navegación es solo texto. Las secciones hero se basan completamente en la jerarquía tipográfica.",
+    "prompt": "Construye esta interfaz en un estilo de diseño minimalista. Usa un fondo blanco estricto con texto casi negro. Cada elemento debe tener espacio en blanco generoso — las secciones respiran, nada se siente apretado. La tipografía es la protagonista: usa encabezados grandes y en negrita contrastados con texto de cuerpo ligero. El único acento de color se usa solo en CTAs primarios y enlaces. Sin elementos decorativos, degradados ni sombras. Todos los componentes UI usan líneas limpias y bordes sutiles. La cuadrícula es ajustada y consistente. Piensa en Vercel, Linear o Notion como estética.",
+    "exampleUseCase": "Página de aterrizaje SaaS, herramienta para desarrolladores, portfolio, sitio de documentación"
+  },
+  "corporate": {
+    "description": "Lenguaje de diseño profesional y confiable para productos empresariales y herramientas B2B",
+    "mood": ["profesional", "confiable", "estructurado", "sólido"],
+    "designPrinciples": [
+      "La jerarquía comunica confianza: diseño estructurado con flujo de información claro",
+      "El azul comunica fiabilidad — usar en todas las acciones clave",
+      "Diseño denso en información: tablas, datos y listas son de primera clase",
+      "Las micro-interacciones son sutiles: sin animaciones rebotantes",
+      "Accesibilidad primero: contraste mínimo de 4,5:1 en todas partes"
+    ],
+    "componentStyle": "Botones: azul primario sólido con ligero redondeado. Los botones secundarios son blancos con borde. Las tarjetas tienen fondo claro con borde de 1px. Las tablas tienen fondos de filas alternados. Las insignias de datos tienen forma de pill en colores semánticos claros.",
+    "prompt": "Construye esta UI de producto empresarial. Usa un fondo blanco limpio con azul primario para todos los CTAs clave, enlaces y estados activos. La tipografía es estructurada y densa — este es un producto rico en datos. Las tarjetas usan una superficie gris muy claro con bordes de 1px limpios. Las tablas, listas y visualizaciones de datos son de alta prioridad — hacerlas fácilmente escaneables. Los botones son azul sólido (primario) o con contorno (secundario). Sin degradados. Diseñar para sesiones de trabajo largas: baja fatiga visual, alta densidad de información. Piensa en Salesforce, Jira, Linear o HubSpot.",
+    "exampleUseCase": "CRM, panel de análisis, panel de administración, SaaS B2B, herramienta interna"
+  },
+  "dark-luxury": {
+    "description": "Modo oscuro de alta gama con acentos dorados, tipografía editorial y sensación premium",
+    "mood": ["lujoso", "editorial", "sofisticado", "oscuro"],
+    "designPrinciples": [
+      "Fondos casi negros profundos — nunca negro puro, siempre un casi negro cálido",
+      "El oro es precioso — usar con moderación solo para momentos clave de jerarquía",
+      "Los encabezados serif combinados con cuerpo de texto sans-serif ligero crean contraste editorial",
+      "El espacio en blanco generoso indica lujo — nada está apretado",
+      "La fotografía y las imágenes dominan — la UI se hace a un lado"
+    ],
+    "componentStyle": "Botones: estilo contorno minimal con borde dorado y texto dorado — sin rellenos. Las tarjetas tienen superficie oscura con una línea de acento dorada cálida en la parte superior. Los campos de entrada son oscuros con borde cálido sutil. Los divisores son líneas doradas finas. Los encabezados de sección usan tipografía serif grande.",
+    "prompt": "Construye esta interfaz en un estilo Dark Luxury editorial. El fondo es casi negro cálido. Todos los encabezados usan la tipografía serif Playfair Display — grande, en negrita, imponente. El texto del cuerpo es de peso ligero en blanco roto cálido. El único acento es el dorado — usar solo para momentos UI clave: CTAs primarios, elementos de navegación activos, subrayados al pasar el cursor, líneas decorativas. Los botones son de contorno con borde dorado. Sin esquinas redondeadas. Espacio en blanco enorme entre secciones. Piensa en una casa de moda de lujo, un hotel de lujo o una galería de arte.",
+    "exampleUseCase": "Marca de lujo, moda, hotel, galería, editorial premium, portfolio de alta gama"
+  },
+  "glassmorphism": {
+    "description": "Superficies de vidrio esmerilado con degradados vibrantes, efectos de desenfoque y profundidad luminosa",
+    "mood": ["futurista", "premium", "etéreo", "vibrante"],
+    "designPrinciples": [
+      "Los fondos son oscuros con ricos mallados de degradado de morado a azul",
+      "Las tarjetas usan backdrop-filter blur con superficie blanca rgba",
+      "Un borde blanco sutil separa el vidrio del fondo",
+      "Elementos brillantes: drop-shadows de colores que coinciden con el acento",
+      "El contenido es siempre texto claro sobre vidrio oscuro"
+    ],
+    "componentStyle": "Las tarjetas usan backdrop-filter blur, fondo blanco rgba y borde blanco sutil. Los botones usan rellenos de degradado con un brillo suave. Los campos de entrada tienen fondo de vidrio. El fondo tiene grandes orbes de degradado radial difuminados en morado y cian.",
+    "prompt": "Construye esta interfaz usando Glassmorphism. El fondo es marino oscuro profundo con grandes orbes de degradado difuminados como decoración de fondo. Todas las tarjetas y paneles UI deben usar backdrop-filter blur, superficie blanca rgba y borde sutil. El texto es blanco puro o blanco semitransparente para elementos atenuados. Los botones usan rellenos de degradado con un brillo correspondiente. Piensa en las diapositivas de la WWDC de Apple, la página de inicio con degradados de Stripe o los widgets de iOS. Premium, futurista, luminoso.",
+    "exampleUseCase": "App Web3, producto de IA, plataforma musical, panel SaaS premium"
+  },
+  "neo-brutalism": {
+    "description": "Bordes gruesos, sombras duras, rellenos planos y energía UI cruda y sin disculpas",
+    "mood": ["atrevido", "juguetón", "ruidoso", "crudo"],
+    "designPrinciples": [
+      "Bordes negros sólidos de 3 a 4px en casi todos los elementos",
+      "Sombras de desplazamiento duras en lugar de sombras suaves",
+      "Rellenos planos y brillantes — amarillo, coral, cian — nunca degradados",
+      "La tipografía es pesada y sin disculpas",
+      "Los estados hover desplazan el elemento 2px compensando la sombra"
+    ],
+    "componentStyle": "Todas las tarjetas, botones y contenedores tienen un borde negro sólido grueso con una sombra de caída dura. Al pasar el cursor, los elementos se trasladan y la sombra se reduce. Los rellenos de botones usan amarillo primario o coral secundario. Los campos de entrada tienen el mismo tratamiento de borde pesado.",
+    "prompt": "Construye esta UI en estilo Neo-Brutalista. Cada tarjeta, botón, modal y contenedor debe tener un borde negro sólido grueso con una sombra de desplazamiento dura. Rellenos planos brillantes — amarillo, coral, cian — sin degradados en ningún lado. La tipografía es en negrita y sobredimensionada. Los estados hover deben desplazar los elementos 2px y reducir el desplazamiento de la sombra. Piensa en el playground de Figma, el rediseño de Gumroad o el sitio de marketing de Pitch. Mantener la energía alta, nada debe sentirse pulido o corporativo.",
+    "exampleUseCase": "Portfolio creativo, página de aterrizaje de startup, herramienta de diseño, producto independiente"
+  },
+  "retro": {
+    "description": "Estética de terminal de los 80 con scanlines, brillos de fósforo y vibras CRT",
+    "mood": ["nostálgico", "friki", "atmosférico", "de nicho"],
+    "designPrinciples": [
+      "Todo es monoespaciado — sin fuentes humanistas o de display",
+      "Verde terminal sobre casi negro — efecto de brillo de fósforo con text-shadow",
+      "Cero border-radius — las esquinas son siempre nítidas",
+      "Arte ASCII y caracteres de box-drawing como decoración",
+      "Superposición de scanlines con CSS para textura"
+    ],
+    "componentStyle": "Los botones parecen comandos de terminal con corchetes. Las tarjetas son paneles con bordes de box-drawing ASCII. Los campos de entrada parecen prompts de terminal con cursor parpadeante. Todo el texto tiene un text-shadow verde sutil para el brillo de fósforo. El fondo tiene una superposición CSS de scanlines.",
+    "prompt": "Construye esta UI con una estética de terminal CRT retro. El fondo es casi negro. Todo el texto es verde fósforo con un brillo sutil. Cada fuente es monoespaciada. Cero border-radius en ningún lugar. Los botones usan estilo de corchete ASCII. Las tarjetas usan caracteres box-drawing para bordes. Agrega una superposición CSS de scanlines. Piensa en un viejo terminal hacker, la estética Matrix o una UI de juego retro. Mantenerlo atmosférico y oscuro.",
+    "exampleUseCase": "Herramienta para desarrolladores, juego, portfolio de estética hacker, plataforma CTF, sitio de documentación CLI"
+  },
+  "cyberpunk": {
+    "description": "UI distópica empapada en neón con efectos de glitch, scanlines y contraste eléctrico",
+    "mood": ["eléctrico", "oscuro", "futurista", "peligroso"],
+    "designPrinciples": [
+      "Brillos de neón en todo — text-shadow y box-shadow en rojo, cian, amarillo",
+      "Cortes angulares: clip-path en tarjetas y botones",
+      "Animación de glitch: elemento duplicado con desplazamiento y cambio de color al pasar el cursor",
+      "Fondos de espacio profundo oscuro con superposición de textura de ruido sutil",
+      "Alto contraste — neón solo sobre casi negro"
+    ],
+    "componentStyle": "Los botones usan cortes de polígono clip-path con brillo de borde neón. Las tarjetas tienen borde neón con brillo box-shadow de color correspondiente. Los encabezados tienen duplicados de glitch text-shadow en rojo o cian. Los fondos de sección usan textura de ruido oscuro.",
+    "prompt": "Construye esta UI en estilo Cyberpunk. El fondo es profundamente oscuro, casi negro con tono azul. Todos los acentos neón: rojo primario, cian, amarillo. Los encabezados usan fuente angular con text-shadow brillante. Los botones y tarjetas tienen esquinas angulares nítidas vía clip-path, con borde neón y brillo box-shadow correspondiente. Agrega animación CSS de glitch al pasar el cursor. La tipografía es angular y ajustada. Piensa en la UI de Cyberpunk 2077, los terminales de Blade Runner 2049 o los HUDs de Ghost in the Shell. Alta energía, alto contraste.",
+    "exampleUseCase": "UI de juego, startup tecnológica, dApp crypto/Web3, plataforma de esports, portfolio sci-fi"
+  },
+  "vaporwave": {
+    "description": "Estética retro-internet nostálgica de los 80/90 con degradados rosa-morado y pisos de cuadrícula",
+    "mood": ["nostálgico", "onírico", "surrealista", "pastel"],
+    "designPrinciples": [
+      "Degradados rosa a morado en fondos, botones y encabezados",
+      "Piso de cuadrícula en perspectiva como decoración de fondo hero",
+      "Efecto de texto cromado/reflectante en los encabezados principales",
+      "Brillos suaves en rosa y menta — nada es nítido o duro",
+      "Elementos decorativos de estilo VHS retro: scanlines, estática, doble exposición"
+    ],
+    "componentStyle": "Las tarjetas tienen fondo semitransparente con tono morado y borde de degradado rosa. Los botones son formas pill rellenas de degradado con un brillo suave. Los encabezados usan efecto de texto degradado que va de rosa a morado. La sección hero tiene una cuadrícula de perspectiva CSS que se aleja hacia el horizonte.",
+    "prompt": "Construye esta UI en estética Vaporwave. El fondo es morado profundo con un bloom de degradado radial brillante rosa-a-morado detrás del contenido hero. Todos los encabezados usan efecto de texto degradado de rosa a morado. Los botones son formas pill rellenas de degradado con suave brillo rosa. Las tarjetas tienen superficie morada semitransparente con borde de degradado. Incluir una cuadrícula de perspectiva 3D CSS en el hero. El verde menta se usa como acento de contraste para los CTAs. Onírico, brumoso, nostálgico. Piensa en Windows 95 encontrándose con Miami Beach al atardecer.",
+    "exampleUseCase": "Plataforma musical, portfolio creativo, juego indie, blog temático retro, proyecto de arte"
+  },
+  "bauhaus": {
+    "description": "Modernismo geométrico con colores primarios, cuadrículas estrictas y cero ornamentación",
+    "mood": ["geométrico", "atrevido", "sistemático", "atemporal"],
+    "designPrinciples": [
+      "Solo tres colores: rojo, azul, amarillo — más negro y blanco roto",
+      "Cero border-radius — todas las formas son estrictamente rectangulares",
+      "La geometría como decoración: círculos, triángulos, rectángulos como bloques visuales",
+      "La tipografía es estructural: los grandes encabezados condensados actúan como elementos de diseño",
+      "La cuadrícula es sagrada — todo se alinea a un sistema modular rígido"
+    ],
+    "componentStyle": "Los botones son rectángulos planos — relleno rojo o azul sólido, texto negro, radio cero. Las tarjetas usan bordes negros de 2px con relleno blanco plano. Los bloques de color sirven como anclas visuales. Las formas geométricas se usan como separadores decorativos de sección. Sin sombras, sin degradados, sin decoración.",
+    "prompt": "Construye esta UI siguiendo los principios de diseño Bauhaus. El fondo es un crema cálido. La tipografía usa fuente condensada en negrita para todos los encabezados — tratando el texto como una forma visual. Usar solo tres colores de acento: rojo, azul, amarillo. Cero border-radius en todos lados. Bordes negros de 2px en todos los contenedores. Usar formas geométricas como elementos decorativos y separadores de sección. Sin sombras, sin degradados, sin adornos decorativos. La forma pura sigue la función. Piensa en los pósters tipográficos de Herbert Bayer o las cuadrículas de Mondrian.",
+    "exampleUseCase": "Agencia de diseño, empresa de arquitectura, escuela de arte, museo, marca modernista"
+  },
+  "cottagecore": {
+    "description": "Calidez orgánica suave con texturas botánicas, vibes de dibujo a mano y pasteles terrosos",
+    "mood": ["cálido", "acogedor", "orgánico", "suave"],
+    "designPrinciples": [
+      "Blancos rotos cremosos y cálidos — nunca blanco puro, siempre envejecido y suave",
+      "Verde terroso y terracota como la única familia de acento",
+      "Formas orgánicas: bordes ligeramente imperfectos, SVGs blob como fondos",
+      "Tipografía serif a lo largo — editorial y cálida, nunca sans-serif geométrico",
+      "Imágenes botánicas: hojas, flores, hierbas como motivos decorativos"
+    ],
+    "componentStyle": "Los botones son píldoras suavemente redondeadas en verde salvia apagado o terracota. Las tarjetas usan una superficie de pergamino cálida con borde suave y sombra ligera. Los campos de entrada tienen un subrayado de estilo manuscrito o borde suavemente redondeado. Dibujos de líneas SVG botánicos decorativos usados como separadores de sección.",
+    "prompt": "Construye esta UI en una estética Cottagecore. El fondo es crema cálido — envejecido, suave, nunca blanco clínico. Toda la tipografía es serif: grandes encabezados elegantes y literarios, texto de cuerpo cálido. Los colores son terrosos: verde salvia, marrón cálido, terracota. Los botones son formas pill redondeadas sin bordes duros. Las tarjetas tienen superficie de pergamino con sombras suaves. Usar decoraciones SVG de inspiración botánica como separadores de sección o textura de fondo. Todo debe sentirse artesanal, cálido y natural — como un hermoso libro de recetas antiguo o un diario de jardín de campo.",
+    "exampleUseCase": "Blog de comida, marca de bienestar, tienda artesanal, plataforma de estilo de vida, sitio de recetas"
+  },
+  "swiss-international": {
+    "description": "Disciplina de cuadrícula de la era Helvetica — acentos rojos intensos, alineación estricta, cero sentimiento",
+    "mood": ["disciplinado", "autoritario", "austero", "preciso"],
+    "designPrinciples": [
+      "La cuadrícula es ley — cada elemento se ajusta a un sistema de columnas modulares estricto",
+      "El rojo es una señal, no decoración — usar solo para jerarquía y atención",
+      "Solo Helvetica o sans-serif del sistema — las fuentes serif están prohibidas",
+      "El espacio en blanco comunica confianza — resistir el impulso de llenarlo",
+      "Los diseños asimétricos con gran espacio negativo se prefieren sobre la simetría"
+    ],
+    "componentStyle": "Todos los bordes son 1-2px sólido negro. Los botones son rellenos negros planos con texto blanco o con contorno negro. Las tarjetas son cajas blancas con borde negro — sin radio, sin sombra. El rojo está reservado para CTA primario, estado activo y etiquetas críticas. Grandes números tipográficos o citas destacadas sirven como decoración de sección.",
+    "prompt": "Construye esta UI en el Estilo Tipográfico Internacional Suizo. El fondo es blanco puro. La fuente es exclusivamente Helvetica Neue o sans-serif del sistema. El rojo se usa solo para botones CTA primarios, estados activos y líneas de acento estructurales. Todo lo demás es negro, blanco o gris. Cero border-radius. Bordes negros en todos los contenedores. El diseño sigue una cuadrícula de múltiples columnas estricta — asimétrica, disciplinada. Grandes números de encabezado negros usados como anclas visuales. Sin degradados, sin texturas, sin formas decorativas. Piensa en las cuadrículas de pósters de Müller-Brockmann o la estética del documental Helvetica.",
+    "exampleUseCase": "Estudio de diseño, arquitectura, revista editorial, museo, agencia de identidad de marca"
+  },
+  "biopunk": {
+    "description": "Biomecánica orgánica oscura — superficies húmedas, verdes tóxicos, patrones de ADN, UI viviente",
+    "mood": ["orgánico", "oscuro", "experimental", "perturbador"],
+    "designPrinciples": [
+      "Border-radius asimétrico: esquinas orgánicas en forma de blob",
+      "Brillos de neón verde tóxico en elementos UI clave",
+      "Patrones de fondo SVG: hélices de ADN, cuadrículas celulares, híbridos circuito-orgánico",
+      "Efecto de superficie húmeda/brillante usando superposición de degradado sutil en tarjetas",
+      "Todo se siente vivo: animaciones de pulso respiratorio en componentes clave"
+    ],
+    "componentStyle": "Las tarjetas usan border-radius asimétrico con superficie verde oscuro y brillo interior sutil. Los botones tienen forma orgánica con animación de brillo pulsante. Los bordes son verde oscuro, a menudo punteados o discontinuos sugiriendo estructura celular. El fondo tiene un patrón de cuadrícula hexagonal SVG.",
+    "prompt": "Construye esta UI en un estilo de diseño Biopunk. El fondo es casi negro con tono verde profundo. Todas las superficies son verde orgánico oscuro. El verde neón tóxico es el color primario — usado para brillos, resaltados de texto y elementos UI clave con fuerte brillo box-shadow. Usa border-radius asimétrico en todas las tarjetas y botones para crear una sensación orgánica viva. Agrega una cuadrícula hexagonal SVG CSS como patrón de fondo. Los encabezados son pesados y angulares, el texto del cuerpo es clínico y parecido a datos. Anima los elementos clave con un keyframe de pulso respiratorio lento en el brillo verde. Piensa en la estética de la película Annihilation, la UI del juego SOMA o las interfaces de laboratorio genético biopunk.",
+    "exampleUseCase": "Startup de biotech, juego sci-fi, herramienta de investigación genética, arte experimental, estética de terror"
+  }
+}

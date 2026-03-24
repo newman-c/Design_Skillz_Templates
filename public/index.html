@@ -492,6 +492,21 @@
   }
   .btn-save:hover { opacity: 0.85; }
 
+  .btn-shape-preset {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn-shape-preset:hover { border-color: var(--accent); color: var(--accent2); }
+
   /* ── TOAST ── */
   .toast {
     position: fixed;
@@ -720,6 +735,146 @@
   .lang-item .lang-name { flex: 1; }
   .lang-item .lang-code { font-size: 10px; font-family: 'JetBrains Mono', monospace; color: var(--text3); }
 
+  /* ── EXPORT BAR ── */
+  .export-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .export-bar-label {
+    font-size: 12px;
+    color: var(--text3);
+    font-weight: 500;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+  .btn-export {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .btn-export:hover { background: var(--surface); color: var(--text); }
+  .btn-export.html:hover  { border-color: #e34c26; color: #e34c26; }
+  .btn-export.css:hover   { border-color: #264de4; color: #264de4; }
+  .btn-export.tw:hover    { border-color: #38bdf8; color: #38bdf8; }
+  .btn-export.react:hover { border-color: #61dafb; color: #61dafb; }
+  .btn-export.vue:hover   { border-color: #42b883; color: #42b883; }
+  .btn-export .ext-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .btn-export.html .ext-dot  { background: #e34c26; }
+  .btn-export.css .ext-dot   { background: #264de4; }
+  .btn-export.tw .ext-dot    { background: #38bdf8; }
+  .btn-export.react .ext-dot { background: #61dafb; }
+  .btn-export.vue .ext-dot   { background: #42b883; }
+
+  /* ── EXPORT MODAL ── */
+  .export-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(8px);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .export-overlay.open { display: flex; }
+  .export-modal {
+    width: 100%;
+    max-width: 860px;
+    max-height: calc(100vh - 80px);
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  }
+  .export-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 52px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    gap: 12px;
+  }
+  .export-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 0;
+  }
+  .export-format-badge {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .export-format-badge.html  { background: rgba(227,76,38,0.15);  color: #e34c26; border: 1px solid rgba(227,76,38,0.3); }
+  .export-format-badge.css   { background: rgba(38,77,228,0.15);  color: #638af5; border: 1px solid rgba(38,77,228,0.3); }
+  .export-format-badge.tw    { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); }
+  .export-format-badge.react { background: rgba(97,218,251,0.12); color: #61dafb; border: 1px solid rgba(97,218,251,0.3); }
+  .export-format-badge.vue   { background: rgba(66,184,131,0.12); color: #42b883; border: 1px solid rgba(66,184,131,0.3); }
+  .export-modal-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .btn-download {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s;
+  }
+  .btn-download:hover { opacity: 0.85; }
+  .export-code-wrap {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+    background: #0d0d0d;
+  }
+  .export-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #cdd6f4;
+    padding: 24px 28px;
+    white-space: pre;
+    tab-size: 2;
+    margin: 0;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .sidebar { width: 240px; }
@@ -787,6 +942,27 @@
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- EXPORT MODAL -->
+<div class="export-overlay" id="exportOverlay" onclick="closeExportOverlay(event)">
+  <div class="export-modal">
+    <div class="export-modal-header">
+      <div class="export-modal-title">
+        ↓ Export
+        <span class="export-format-badge" id="exportFormatBadge"></span>
+        <span style="color:var(--text2); font-weight:400;" id="exportFilename"></span>
+      </div>
+      <div class="export-modal-actions">
+        <button class="btn-sm" onclick="copyExportCode()">⎘ Copy</button>
+        <button class="btn-download" onclick="downloadExportCode()">↓ Download</button>
+        <button class="preview-close" onclick="closeExport()">✕</button>
+      </div>
+    </div>
+    <div class="export-code-wrap">
+      <pre class="export-code" id="exportCode"></pre>
+    </div>
+  </div>
+</div>
 
 <!-- PREVIEW MODAL -->
 <div class="preview-overlay" id="previewOverlay" onclick="overlayClose(event)">
@@ -860,6 +1036,13 @@
       toastNoChange: 'No changes specified.',
       desktopBtn: 'Desktop',
       mobileBtn: 'Mobile',
+      btnStyleTitle: 'Button Style',
+      btnColorLabel: 'Button Color',
+      btnShapeLabel: 'Button Shape',
+      btnShapePill: '⬭ Pill',
+      btnShapeStd: '◻ Default',
+      btnShapeSoft: '▣ Soft',
+      btnShapeSquare: '■ Square',
     },
     de: {
       skillsBadge: n => `${n} Design-Skills`,
@@ -893,6 +1076,13 @@
       toastNoChange: 'Keine Änderungen angegeben.',
       desktopBtn: 'Desktop',
       mobileBtn: 'Mobil',
+      btnStyleTitle: 'Button-Stil',
+      btnColorLabel: 'Button-Farbe',
+      btnShapeLabel: 'Button-Form',
+      btnShapePill: '⬭ Pill',
+      btnShapeStd: '◻ Standard',
+      btnShapeSoft: '▣ Weich',
+      btnShapeSquare: '■ Eckig',
     },
     fr: {
       skillsBadge: n => `${n} styles design`,
@@ -919,13 +1109,20 @@
       previewBtn: '◱  Aperçu du design',
       previewModalTitle: '◱ Aperçu du design',
       colorLabels: { primary:'Primaire', secondary:'Secondaire', accent:'Accent', background:'Arrière-plan', surface:'Surface', text:'Texte', textMuted:'Texte atténué', border:'Bordure' },
-      typoLabels: { heading:'Titre', body:'Corps', mono:'Mono', baseSize:'Taille de base', scale:'Échelle', headingWt:'Graissse titre', bodyWt:'Graisse corps' },
+      typoLabels: { heading:'Titre', body:'Corps', mono:'Mono', baseSize:'Taille de base', scale:'Échelle', headingWt:'Graisse titre', bodyWt:'Graisse corps' },
       spacingLabels: { unit:'Unité', maxWidth:'Largeur max', radius:'Rayon', gap:'Écart composant' },
       toastCopied: 'Copié dans le presse-papiers',
       toastUpdated: 'Style mis à jour ✓',
       toastNoChange: 'Aucune modification spécifiée.',
       desktopBtn: 'Bureau',
       mobileBtn: 'Mobile',
+      btnStyleTitle: 'Style des boutons',
+      btnColorLabel: 'Couleur du bouton',
+      btnShapeLabel: 'Forme du bouton',
+      btnShapePill: '⬭ Pilule',
+      btnShapeStd: '◻ Défaut',
+      btnShapeSoft: '▣ Doux',
+      btnShapeSquare: '■ Carré',
     },
     es: {
       skillsBadge: n => `${n} estilos de diseño`,
@@ -959,6 +1156,13 @@
       toastNoChange: 'No se especificaron cambios.',
       desktopBtn: 'Escritorio',
       mobileBtn: 'Móvil',
+      btnStyleTitle: 'Estilo de botones',
+      btnColorLabel: 'Color del botón',
+      btnShapeLabel: 'Forma del botón',
+      btnShapePill: '⬭ Píldora',
+      btnShapeStd: '◻ Estándar',
+      btnShapeSoft: '▣ Suave',
+      btnShapeSquare: '■ Cuadrado',
     },
     pt: {
       skillsBadge: n => `${n} estilos de design`,
@@ -992,6 +1196,13 @@
       toastNoChange: 'Nenhuma alteração especificada.',
       desktopBtn: 'Desktop',
       mobileBtn: 'Mobile',
+      btnStyleTitle: 'Estilo de botões',
+      btnColorLabel: 'Cor do botão',
+      btnShapeLabel: 'Forma do botão',
+      btnShapePill: '⬭ Pílula',
+      btnShapeStd: '◻ Padrão',
+      btnShapeSoft: '▣ Suave',
+      btnShapeSquare: '■ Quadrado',
     },
     it: {
       skillsBadge: n => `${n} stili design`,
@@ -1025,6 +1236,13 @@
       toastNoChange: 'Nessuna modifica specificata.',
       desktopBtn: 'Desktop',
       mobileBtn: 'Mobile',
+      btnStyleTitle: 'Stile pulsanti',
+      btnColorLabel: 'Colore pulsante',
+      btnShapeLabel: 'Forma pulsante',
+      btnShapePill: '⬭ Pillola',
+      btnShapeStd: '◻ Standard',
+      btnShapeSoft: '▣ Morbido',
+      btnShapeSquare: '■ Quadrato',
     },
     ru: {
       skillsBadge: n => `${n} стилей дизайна`,
@@ -1058,6 +1276,13 @@
       toastNoChange: 'Изменения не указаны.',
       desktopBtn: 'Десктоп',
       mobileBtn: 'Мобильный',
+      btnStyleTitle: 'Стиль кнопок',
+      btnColorLabel: 'Цвет кнопки',
+      btnShapeLabel: 'Форма кнопки',
+      btnShapePill: '⬭ Пилюля',
+      btnShapeStd: '◻ Стандарт',
+      btnShapeSoft: '▣ Мягкий',
+      btnShapeSquare: '■ Квадрат',
     },
     ja: {
       skillsBadge: n => `${n} デザインスキル`,
@@ -1091,6 +1316,13 @@
       toastNoChange: '変更が指定されていません。',
       desktopBtn: 'デスクトップ',
       mobileBtn: 'モバイル',
+      btnStyleTitle: 'ボタンスタイル',
+      btnColorLabel: 'ボタンカラー',
+      btnShapeLabel: 'ボタン形状',
+      btnShapePill: '⬭ ピル',
+      btnShapeStd: '◻ 標準',
+      btnShapeSoft: '▣ ソフト',
+      btnShapeSquare: '■ 角型',
     },
     zh: {
       skillsBadge: n => `${n} 个设计风格`,
@@ -1124,6 +1356,13 @@
       toastNoChange: '未指定任何更改。',
       desktopBtn: '桌面端',
       mobileBtn: '移动端',
+      btnStyleTitle: '按钮样式',
+      btnColorLabel: '按钮颜色',
+      btnShapeLabel: '按钮形状',
+      btnShapePill: '⬭ 胶囊',
+      btnShapeStd: '◻ 默认',
+      btnShapeSoft: '▣ 柔和',
+      btnShapeSquare: '■ 方形',
     },
     ko: {
       skillsBadge: n => `${n}개 디자인 스킬`,
@@ -1157,6 +1396,13 @@
       toastNoChange: '변경 사항이 없습니다.',
       desktopBtn: '데스크톱',
       mobileBtn: '모바일',
+      btnStyleTitle: '버튼 스타일',
+      btnColorLabel: '버튼 색상',
+      btnShapeLabel: '버튼 모양',
+      btnShapePill: '⬭ 필',
+      btnShapeStd: '◻ 기본',
+      btnShapeSoft: '▣ 부드럽게',
+      btnShapeSquare: '■ 사각형',
     },
   };
 
@@ -1185,7 +1431,7 @@
     document.getElementById('langDropdown').classList.toggle('open');
   }
 
-  function setLang(lang) {
+  async function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('typeui-lang', lang);
     const meta = LANGS[lang];
@@ -1197,7 +1443,17 @@
     document.getElementById('langBtn').classList.remove('open');
     document.getElementById('langDropdown').classList.remove('open');
     applyStaticTranslations();
-    if (currentSkill) renderDetail(currentSkill);
+    // Reload skills and current skill with new language
+    const skillsRes = await fetch(`/api/skills?lang=${lang}`);
+    allSkills = await skillsRes.json();
+    renderSidebar(allSkills);
+    if (currentSkill) {
+      const slug = currentSkill.slug;
+      document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('active'));
+      document.getElementById('card-' + slug)?.classList.add('active');
+      currentSkill = await fetch(`/api/skills/${slug}?lang=${lang}`).then(r => r.json());
+      renderDetail(currentSkill);
+    }
   }
 
   document.addEventListener('click', e => {
@@ -1209,7 +1465,7 @@
 
   // ── FETCH & INIT ──
   async function init() {
-    const res = await fetch('/api/skills');
+    const res = await fetch(`/api/skills?lang=${currentLang}`);
     allSkills = await res.json();
     setLang(currentLang);
     renderSidebar(allSkills);
@@ -1239,7 +1495,7 @@
     const card = document.getElementById('card-' + slug);
     if (card) card.classList.add('active');
 
-    const res = await fetch(`/api/skills/${slug}`);
+    const res = await fetch(`/api/skills/${slug}?lang=${currentLang}`);
     currentSkill = await res.json();
 
     document.getElementById('emptyState').style.display = 'none';
@@ -1293,6 +1549,31 @@
             <input class="edit-input" id="edit-bodyFont" value="${s.typography.bodyFont}">
           </div>
         </div>
+
+        <div style="margin-top:16px; padding-top:14px; border-top:1px solid var(--border2);">
+          <div style="font-size:11px; font-weight:600; color:var(--text3); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">${t('btnStyleTitle')}</div>
+          <div class="edit-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="edit-field">
+              <label>${t('btnColorLabel')}</label>
+              <div class="edit-field-row">
+                <div class="edit-color-preview" id="prev-btnColor" style="background:${s.colors.btnColor || s.colors.primary}"></div>
+                <input class="edit-input" id="edit-btnColor" value="${s.colors.btnColor || s.colors.primary}"
+                  oninput="document.getElementById('prev-btnColor').style.background=this.value">
+              </div>
+            </div>
+            <div class="edit-field">
+              <label>${t('btnShapeLabel')}</label>
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">
+                <button class="btn-shape-preset" onclick="setBtnRadius('999px')">${t('btnShapePill')}</button>
+                <button class="btn-shape-preset" onclick="setBtnRadius('${s.spacing.borderRadius}')">${t('btnShapeStd')}</button>
+                <button class="btn-shape-preset" onclick="setBtnRadius('8px')">${t('btnShapeSoft')}</button>
+                <button class="btn-shape-preset" onclick="setBtnRadius('0px')">${t('btnShapeSquare')}</button>
+              </div>
+              <input class="edit-input" id="edit-btnRadius" value="${s.spacing.buttonRadius || s.spacing.borderRadius}" style="margin-top:6px;" placeholder="e.g. 12px">
+            </div>
+          </div>
+        </div>
+
         <div class="edit-save-row">
           <button class="btn-outline" onclick="toggleEdit()">${t('cancelBtn')}</button>
           <button class="btn-save" onclick="saveEdit('${s.slug}')">${t('saveBtn')}</button>
@@ -1369,10 +1650,30 @@
         <span class="preview-icon">◱</span>
         ${t('previewBtn')}
       </button>
+
+      <!-- EXPORT BAR -->
+      <div class="export-bar">
+        <span class="export-bar-label">↓ Export as</span>
+        <button class="btn-export html"  onclick="openExport('${s.slug}','html')">
+          <span class="ext-dot"></span> HTML
+        </button>
+        <button class="btn-export css"   onclick="openExport('${s.slug}','css')">
+          <span class="ext-dot"></span> CSS Variables
+        </button>
+        <button class="btn-export tw"    onclick="openExport('${s.slug}','tailwind')">
+          <span class="ext-dot"></span> Tailwind
+        </button>
+        <button class="btn-export react" onclick="openExport('${s.slug}','react')">
+          <span class="ext-dot"></span> React
+        </button>
+        <button class="btn-export vue"   onclick="openExport('${s.slug}','vue')">
+          <span class="ext-dot"></span> Vue
+        </button>
+      </div>
     `;
 
     // Load prompt text
-    fetch(`/api/skills/${s.slug}/prompt`)
+    fetch(`/api/skills/${s.slug}/prompt?lang=${currentLang}`)
       .then(r => r.text())
       .then(text => { document.getElementById('promptText').textContent = text; });
   }
@@ -1412,7 +1713,7 @@
 
   // ── COPY PROMPT ──
   async function copyPrompt(slug) {
-    const text = await fetch(`/api/skills/${slug}/prompt`).then(r => r.text());
+    const text = await fetch(`/api/skills/${slug}/prompt?lang=${currentLang}`).then(r => r.text());
     navigator.clipboard.writeText(text);
     showToast(t('toastCopied'));
     const btn = document.getElementById('copyBtn');
@@ -1429,6 +1730,12 @@
   function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
     showToast(t('toastCopied'));
+  }
+
+  // ── BUTTON RADIUS PRESET ──
+  function setBtnRadius(val) {
+    const el = document.getElementById('edit-btnRadius');
+    if (el) el.value = val;
   }
 
   // ── TOGGLE EDIT ──
@@ -1451,18 +1758,24 @@
       headingFont: document.getElementById('edit-headingFont')?.value,
       bodyFont: document.getElementById('edit-bodyFont')?.value,
     };
+    const spacing = {
+      buttonRadius: document.getElementById('edit-btnRadius')?.value,
+    };
+    const btnColor = document.getElementById('edit-btnColor')?.value;
+    if (btnColor) colors.btnColor = btnColor;
+
     await fetch(`/api/skills/${slug}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ colors, typography }),
+      body: JSON.stringify({ colors, typography, spacing }),
     });
     // Reload
-    const res = await fetch(`/api/skills`);
+    const res = await fetch(`/api/skills?lang=${currentLang}`);
     allSkills = await res.json();
     renderSidebar(allSkills);
     document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('active'));
     document.getElementById('card-' + slug)?.classList.add('active');
-    const updated = await fetch(`/api/skills/${slug}`).then(r => r.json());
+    const updated = await fetch(`/api/skills/${slug}?lang=${currentLang}`).then(r => r.json());
     currentSkill = updated;
     renderDetail(updated);
     showToast(t('toastUpdated'));
@@ -1516,8 +1829,7 @@
     wrap.classList.toggle('mobile', size === 'mobile');
   }
 
-  function renderPreviewFrame(s) {
-    const frame = document.getElementById('previewFrame');
+  function buildPreviewHTML(s) {
     const r = s.spacing.borderRadius;
     const hasGlass = s.slug === 'glassmorphism';
     const isRetro = s.slug === 'retro';
@@ -1552,6 +1864,10 @@
       : s.slug === 'neo-brutalism'
       ? 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap'
       : 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+
+    const btnColor  = s.colors.btnColor  || s.colors.primary;
+    const btnRadius = s.spacing.buttonRadius || r;
+    const isNeoBrut = s.slug === 'neo-brutalism';
 
     const html = `<!DOCTYPE html>
 <html>
@@ -1597,15 +1913,21 @@
   .nav-links a:hover { color: ${s.colors.text}; }
   .nav-cta {
     padding: 8px 20px;
-    border-radius: ${r};
-    background: ${s.colors.primary};
+    border-radius: ${btnRadius};
+    background: ${btnColor};
     color: ${isDark ? s.colors.background : '#fff'};
     font-size: 14px;
     font-weight: 600;
-    border: ${s.slug === 'neo-brutalism' ? `2px solid ${s.colors.border}` : 'none'};
-    box-shadow: ${s.slug === 'neo-brutalism' ? `3px 3px 0 ${s.colors.border}` : 'none'};
+    border: ${isNeoBrut ? `2px solid ${s.colors.border}` : 'none'};
+    box-shadow: ${isNeoBrut ? `3px 3px 0 ${s.colors.border}` : 'none'};
     cursor: pointer; font-family: inherit;
-    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${s.colors.primary}; color: ${s.colors.primary};` : ''}
+    transition: all 0.2s ease;
+    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${btnColor}; color: ${btnColor};` : ''}
+  }
+  .nav-cta:hover {
+    ${isNeoBrut
+      ? `transform: translate(2px,2px); box-shadow: 1px 1px 0 ${s.colors.border};`
+      : `opacity: 0.82; transform: translateY(-1px);`}
   }
   /* HERO */
   .hero {
@@ -1649,25 +1971,39 @@
   .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn-primary {
     padding: 14px 28px;
-    border-radius: ${r};
-    background: ${s.colors.primary};
+    border-radius: ${btnRadius};
+    background: ${btnColor};
     color: ${isDark ? s.colors.background : '#fff'};
     font-size: 15px; font-weight: 600;
-    border: ${s.slug === 'neo-brutalism' ? `3px solid ${s.colors.border}` : 'none'};
+    border: ${isNeoBrut ? `3px solid ${s.colors.border}` : 'none'};
     box-shadow: ${shadowStyle};
     cursor: pointer; font-family: inherit;
-    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${s.colors.primary}; color: ${s.colors.primary};` : ''}
+    transition: all 0.2s ease;
+    ${s.slug === 'dark-luxury' ? `background: transparent; border: 1px solid ${btnColor}; color: ${btnColor};` : ''}
     ${isRetro ? textGlow : ''}
+  }
+  .btn-primary:hover {
+    ${isNeoBrut
+      ? `transform: translate(2px,2px); box-shadow: 1px 1px 0 ${s.colors.border};`
+      : s.slug === 'dark-luxury'
+      ? `background: ${btnColor}22; transform: translateY(-1px);`
+      : `opacity: 0.82; transform: translateY(-2px); box-shadow: 0 6px 20px ${btnColor}55;`}
   }
   .btn-secondary {
     padding: 14px 28px;
-    border-radius: ${r};
+    border-radius: ${btnRadius};
     background: transparent;
     color: ${s.colors.text};
     font-size: 15px; font-weight: 500;
     border: ${borderStyle};
-    box-shadow: ${s.slug === 'neo-brutalism' ? shadowStyle : 'none'};
+    box-shadow: ${isNeoBrut ? shadowStyle : 'none'};
     cursor: pointer; font-family: inherit;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    ${isNeoBrut
+      ? `transform: translate(2px,2px); box-shadow: 1px 1px 0 ${s.colors.border};`
+      : `border-color: ${btnColor}; color: ${btnColor}; transform: translateY(-1px);`}
   }
   /* FEATURES */
   .features {
@@ -1850,7 +2186,7 @@
 
 <section style="padding: 0 48px 64px; max-width: ${s.spacing.containerMaxWidth}; margin: 0 auto;">
   <div class="stats">
-    <div class="stat"><span class="stat-num">6+</span><div class="stat-label">Design Skills</div></div>
+    <div class="stat"><span class="stat-num">12+</span><div class="stat-label">Design Skills</div></div>
     <div class="stat"><span class="stat-num">100%</span><div class="stat-label">Open Source</div></div>
     <div class="stat"><span class="stat-num">∞</span><div class="stat-label">Customizable</div></div>
     <div class="stat"><span class="stat-num">1-click</span><div class="stat-label">Copy Prompt</div></div>
@@ -1882,12 +2218,589 @@
 </body>
 </html>`;
 
-    frame.srcdoc = html;
+    return html;
   }
 
-  // ── ESC to close preview ──
+  function renderPreviewFrame(s) {
+    const frame = document.getElementById('previewFrame');
+    frame.srcdoc = buildPreviewHTML(s);
+  }
+
+  // ── EXPORT ──
+  let _exportContent = '';
+  let _exportFilename = '';
+
+  const EXPORT_META = {
+    html:     { label: '.html',       cls: 'html',  ext: 'html' },
+    css:      { label: '.css',        cls: 'css',   ext: 'css'  },
+    tailwind: { label: 'tailwind.config.js', cls: 'tw', ext: 'js' },
+    react:    { label: '.jsx',        cls: 'react', ext: 'jsx'  },
+    vue:      { label: '.vue',        cls: 'vue',   ext: 'vue'  },
+  };
+
+  function openExport(slug, format) {
+    const s = allSkills.find(x => x.slug === slug) || currentSkill;
+    if (!s) return;
+
+    const meta = EXPORT_META[format];
+    const skillName = s.name.replace(/\s+/g, '-').toLowerCase();
+    _exportFilename = format === 'tailwind'
+      ? 'tailwind.config.js'
+      : `typeui-${skillName}.${meta.ext}`;
+
+    _exportContent = format === 'html'     ? genHTML(s)
+                   : format === 'css'      ? genCSS(s)
+                   : format === 'tailwind' ? genTailwind(s)
+                   : format === 'react'    ? genReact(s)
+                   : genVue(s);
+
+    document.getElementById('exportFormatBadge').textContent = meta.label;
+    document.getElementById('exportFormatBadge').className = `export-format-badge ${meta.cls}`;
+    document.getElementById('exportFilename').textContent = _exportFilename;
+    document.getElementById('exportCode').textContent = _exportContent;
+    document.getElementById('exportOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeExport() {
+    document.getElementById('exportOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeExportOverlay(e) {
+    if (e.target === document.getElementById('exportOverlay')) closeExport();
+  }
+  function copyExportCode() {
+    navigator.clipboard.writeText(_exportContent);
+    showToast(t('toastCopied'));
+  }
+  function downloadExportCode() {
+    const blob = new Blob([_exportContent], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = _exportFilename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('↓ Downloaded: ' + _exportFilename);
+  }
+
+  // ── CODE GENERATORS ──
+  function genHTML(s) {
+    // Reuse the same HTML already built for the preview iframe
+    const tempSkill = s;
+    // We call the same builder used in renderPreviewFrame
+    return buildPreviewHTML(tempSkill);
+  }
+
+  function genCSS(s) {
+    return `/* TypeUI Design Skill: ${s.name} */
+/* ${s.description} */
+/* Generated by TypeUI — https://github.com/newman-c/Design_Skillz_Templates */
+
+:root {
+  /* ── Colors ── */
+  --color-primary:    ${s.colors.primary};
+  --color-secondary:  ${s.colors.secondary};
+  --color-accent:     ${s.colors.accent};
+  --color-background: ${s.colors.background};
+  --color-surface:    ${s.colors.surface};
+  --color-text:       ${s.colors.text};
+  --color-text-muted: ${s.colors.textMuted};
+  --color-border:     ${s.colors.border};
+
+  /* ── Typography ── */
+  --font-heading:        ${s.typography.headingFont};
+  --font-body:           ${s.typography.bodyFont};
+  --font-mono:           ${s.typography.monoFont};
+  --font-size-base:      ${s.typography.baseSize};
+  --font-scale-ratio:    ${s.typography.scaleRatio};
+  --font-weight-heading: ${s.typography.headingWeight};
+  --font-weight-body:    ${s.typography.bodyWeight};
+
+  /* ── Spacing & Layout ── */
+  --spacing-unit:          ${s.spacing.unit};
+  --container-max-width:   ${s.spacing.containerMaxWidth};
+  --section-padding:       ${s.spacing.sectionPadding};
+  --component-gap:         ${s.spacing.componentGap};
+  --border-radius:         ${s.spacing.borderRadius};
+}
+
+/* ── Base Styles ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-heading);
+  color: var(--color-text);
+  line-height: 1.15;
+}
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { opacity: 0.8; }
+
+code, pre {
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.btn-secondary:hover { border-color: var(--color-primary); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 24px;
+}
+`;
+  }
+
+  function genTailwind(s) {
+    const fontStack = (f) => f.split(',').map(x => `'${x.trim()}'`).join(', ');
+    return `/** @type {import('tailwindcss').Config} */
+/* TypeUI Design Skill: ${s.name} */
+/* ${s.description} */
+
+module.exports = {
+  content: [
+    './src/**/*.{html,js,jsx,ts,tsx,vue}',
+    './index.html',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary:    '${s.colors.primary}',
+        secondary:  '${s.colors.secondary}',
+        accent:     '${s.colors.accent}',
+        background: '${s.colors.background}',
+        surface:    '${s.colors.surface}',
+        text:       '${s.colors.text}',
+        'text-muted': '${s.colors.textMuted}',
+        border:     '${s.colors.border}',
+      },
+      fontFamily: {
+        heading: [${fontStack(s.typography.headingFont)}],
+        body:    [${fontStack(s.typography.bodyFont)}],
+        mono:    [${fontStack(s.typography.monoFont)}],
+      },
+      fontSize: {
+        base: '${s.typography.baseSize}',
+      },
+      fontWeight: {
+        heading: '${s.typography.headingWeight}',
+        body:    '${s.typography.bodyWeight}',
+      },
+      borderRadius: {
+        DEFAULT: '${s.spacing.borderRadius}',
+        skill:   '${s.spacing.borderRadius}',
+      },
+      maxWidth: {
+        container: '${s.spacing.containerMaxWidth}',
+      },
+      gap: {
+        component: '${s.spacing.componentGap}',
+      },
+    },
+  },
+  plugins: [],
+};
+`;
+  }
+
+  function genReact(s) {
+    const isDark = parseInt(s.colors.background.replace('#',''), 16) < 0x888888;
+    return `// TypeUI Design Skill: ${s.name}
+// ${s.description}
+// Generated by TypeUI — https://github.com/newman-c/Design_Skillz_Templates
+// Usage: drop this file into your React project and run:
+//   npm install  (no extra deps needed)
+
+import React from 'react';
+
+const theme = {
+  colors: {
+    primary:    '${s.colors.primary}',
+    secondary:  '${s.colors.secondary}',
+    accent:     '${s.colors.accent}',
+    background: '${s.colors.background}',
+    surface:    '${s.colors.surface}',
+    text:       '${s.colors.text}',
+    textMuted:  '${s.colors.textMuted}',
+    border:     '${s.colors.border}',
+  },
+  typography: {
+    headingFont: '${s.typography.headingFont}',
+    bodyFont:    '${s.typography.bodyFont}',
+    monoFont:    '${s.typography.monoFont}',
+    baseSize:    '${s.typography.baseSize}',
+    headingWeight: '${s.typography.headingWeight}',
+    bodyWeight:    '${s.typography.bodyWeight}',
+  },
+  spacing: {
+    radius:    '${s.spacing.borderRadius}',
+    maxWidth:  '${s.spacing.containerMaxWidth}',
+    gap:       '${s.spacing.componentGap}',
+  },
+};
+
+const styles = {
+  page: {
+    fontFamily: theme.typography.bodyFont,
+    fontSize: theme.typography.baseSize,
+    fontWeight: theme.typography.bodyWeight,
+    background: theme.colors.background,
+    color: theme.colors.text,
+    minHeight: '100vh',
+  },
+  nav: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0 48px',
+    height: 64,
+    background: theme.colors.surface,
+    borderBottom: \`1px solid \${theme.colors.border}\`,
+    position: 'sticky',
+    top: 0,
+    zIndex: 100,
+  },
+  navLogo: {
+    fontFamily: theme.typography.headingFont,
+    fontWeight: theme.typography.headingWeight,
+    fontSize: 20,
+    color: theme.colors.text,
+  },
+  hero: {
+    textAlign: 'center',
+    padding: '96px 48px 80px',
+    maxWidth: theme.spacing.maxWidth,
+    margin: '0 auto',
+  },
+  h1: {
+    fontFamily: theme.typography.headingFont,
+    fontWeight: theme.typography.headingWeight,
+    fontSize: 'clamp(36px, 6vw, 64px)',
+    lineHeight: 1.1,
+    color: theme.colors.text,
+    marginBottom: 20,
+  },
+  heroSub: {
+    fontSize: 18,
+    color: theme.colors.textMuted,
+    lineHeight: 1.7,
+    maxWidth: 540,
+    margin: '0 auto 36px',
+    fontWeight: 300,
+  },
+  btnPrimary: {
+    padding: '14px 28px',
+    borderRadius: theme.spacing.radius,
+    background: theme.colors.primary,
+    color: '${isDark ? s.colors.background : '#fff'}',
+    fontSize: 15,
+    fontWeight: 600,
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+  },
+  btnSecondary: {
+    padding: '14px 28px',
+    borderRadius: theme.spacing.radius,
+    background: 'transparent',
+    color: theme.colors.text,
+    fontSize: 15,
+    fontWeight: 500,
+    border: \`1px solid \${theme.colors.border}\`,
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+  },
+  card: {
+    background: theme.colors.surface,
+    border: \`1px solid \${theme.colors.border}\`,
+    borderRadius: theme.spacing.radius,
+    padding: 28,
+  },
+  cardsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: theme.spacing.gap,
+    maxWidth: theme.spacing.maxWidth,
+    margin: '0 auto',
+    padding: '64px 48px',
+  },
+};
+
+export default function TypeUIPage() {
+  return (
+    <div style={styles.page}>
+      {/* Navigation */}
+      <nav style={styles.nav}>
+        <span style={styles.navLogo}>✦ TypeUI</span>
+        <div style={{ display: 'flex', gap: 28 }}>
+          {['Features', 'Docs', 'Pricing', 'Blog'].map(link => (
+            <a key={link} href="#" style={{ fontSize: 14, color: theme.colors.textMuted, fontWeight: 500 }}>
+              {link}
+            </a>
+          ))}
+        </div>
+        <button style={styles.btnPrimary}>Get Started</button>
+      </nav>
+
+      {/* Hero */}
+      <section style={styles.hero}>
+        <div style={{
+          display: 'inline-block', fontSize: 12, fontWeight: 600,
+          letterSpacing: '0.12em', textTransform: 'uppercase',
+          color: theme.colors.primary, background: theme.colors.surface,
+          border: \`1px solid \${theme.colors.border}\`,
+          padding: '5px 14px', borderRadius: 20, marginBottom: 24
+        }}>
+          Design Skill: ${s.name}
+        </div>
+        <h1 style={styles.h1}>Build beautiful products,<br/>faster than ever</h1>
+        <p style={styles.heroSub}>
+          TypeUI gives you AI-ready design skill files — drop them into Claude
+          and ship stunning interfaces in minutes, not weeks.
+        </p>
+        <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <button style={styles.btnPrimary}>Start for free →</button>
+          <button style={styles.btnSecondary}>View all skills</button>
+        </div>
+      </section>
+
+      {/* Feature Cards */}
+      <section>
+        <div style={styles.cardsGrid}>
+          {[
+            { icon: '🎨', title: 'Design Tokens', body: 'Colors, fonts, and spacing — all pre-configured and ready for your project.' },
+            { icon: '⚡', title: 'AI-Ready Prompts', body: 'Paste into Claude and instantly generate complete UI components in this style.' },
+            { icon: '✏️', title: 'Fully Editable', body: 'Customize every color, font, and spacing value directly from the CLI or web UI.' },
+          ].map(card => (
+            <div key={card.title} style={styles.card}>
+              <div style={{ fontSize: 28, marginBottom: 16 }}>{card.icon}</div>
+              <h3 style={{ fontFamily: theme.typography.headingFont, fontSize: 17, fontWeight: theme.typography.headingWeight, marginBottom: 8, color: theme.colors.text }}>
+                {card.title}
+              </h3>
+              <p style={{ fontSize: 13, color: theme.colors.textMuted, lineHeight: 1.65 }}>{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+`;
+  }
+
+  function genVue(s) {
+    const isDark = parseInt(s.colors.background.replace('#',''), 16) < 0x888888;
+    return `<!-- TypeUI Design Skill: ${s.name} -->
+<!-- ${s.description} -->
+<!-- Generated by TypeUI — https://github.com/newman-c/Design_Skillz_Templates -->
+
+<template>
+  <div :style="styles.page">
+    <!-- Navigation -->
+    <nav :style="styles.nav">
+      <span :style="styles.navLogo">✦ TypeUI</span>
+      <div :style="{ display: 'flex', gap: '28px' }">
+        <a v-for="link in navLinks" :key="link" href="#"
+           :style="{ fontSize: '14px', color: theme.colors.textMuted, fontWeight: '500' }">
+          {{ link }}
+        </a>
+      </div>
+      <button :style="styles.btnPrimary">Get Started</button>
+    </nav>
+
+    <!-- Hero -->
+    <section :style="styles.hero">
+      <div :style="styles.heroLabel">Design Skill: ${s.name}</div>
+      <h1 :style="styles.h1">Build beautiful products,<br>faster than ever</h1>
+      <p :style="styles.heroSub">
+        TypeUI gives you AI-ready design skill files — drop them into Claude
+        and ship stunning interfaces in minutes, not weeks.
+      </p>
+      <div :style="{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }">
+        <button :style="styles.btnPrimary">Start for free →</button>
+        <button :style="styles.btnSecondary">View all skills</button>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section :style="styles.cardsGrid">
+      <div v-for="card in features" :key="card.title" :style="styles.card">
+        <div style="font-size: 28px; margin-bottom: 16px">{{ card.icon }}</div>
+        <h3 :style="styles.cardTitle">{{ card.title }}</h3>
+        <p :style="styles.cardBody">{{ card.body }}</p>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'TypeUIPage',
+  data() {
+    return {
+      navLinks: ['Features', 'Docs', 'Pricing', 'Blog'],
+      features: [
+        { icon: '🎨', title: 'Design Tokens',    body: 'Colors, fonts, and spacing — all pre-configured and ready for your project.' },
+        { icon: '⚡', title: 'AI-Ready Prompts', body: 'Paste into Claude and instantly generate complete UI components in this style.' },
+        { icon: '✏️', title: 'Fully Editable',   body: 'Customize every color, font, and spacing value directly from the CLI or web UI.' },
+      ],
+      theme: {
+        colors: {
+          primary:    '${s.colors.primary}',
+          secondary:  '${s.colors.secondary}',
+          accent:     '${s.colors.accent}',
+          background: '${s.colors.background}',
+          surface:    '${s.colors.surface}',
+          text:       '${s.colors.text}',
+          textMuted:  '${s.colors.textMuted}',
+          border:     '${s.colors.border}',
+        },
+        typography: {
+          headingFont:   '${s.typography.headingFont}',
+          bodyFont:      '${s.typography.bodyFont}',
+          headingWeight: '${s.typography.headingWeight}',
+        },
+        spacing: {
+          radius:   '${s.spacing.borderRadius}',
+          maxWidth: '${s.spacing.containerMaxWidth}',
+          gap:      '${s.spacing.componentGap}',
+        },
+      },
+    };
+  },
+  computed: {
+    styles() {
+      const t = this.theme;
+      return {
+        page: {
+          fontFamily: t.typography.bodyFont,
+          background: t.colors.background,
+          color:      t.colors.text,
+          minHeight:  '100vh',
+        },
+        nav: {
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: '0 48px', height: '64px',
+          background: t.colors.surface,
+          borderBottom: \`1px solid \${t.colors.border}\`,
+          position: 'sticky', top: 0, zIndex: 100,
+        },
+        navLogo: {
+          fontFamily: t.typography.headingFont,
+          fontWeight: t.typography.headingWeight,
+          fontSize: '20px', color: t.colors.text,
+        },
+        hero: {
+          textAlign: 'center', padding: '96px 48px 80px',
+          maxWidth: t.spacing.maxWidth, margin: '0 auto',
+        },
+        heroLabel: {
+          display: 'inline-block', fontSize: '12px', fontWeight: 600,
+          letterSpacing: '0.12em', textTransform: 'uppercase',
+          color: t.colors.primary, background: t.colors.surface,
+          border: \`1px solid \${t.colors.border}\`,
+          padding: '5px 14px', borderRadius: '20px', marginBottom: '24px',
+        },
+        h1: {
+          fontFamily: t.typography.headingFont,
+          fontWeight: t.typography.headingWeight,
+          fontSize: 'clamp(36px, 6vw, 64px)',
+          lineHeight: 1.1, color: t.colors.text, marginBottom: '20px',
+        },
+        heroSub: {
+          fontSize: '18px', color: t.colors.textMuted,
+          lineHeight: 1.7, maxWidth: '540px',
+          margin: '0 auto 36px', fontWeight: 300,
+        },
+        btnPrimary: {
+          padding: '14px 28px', borderRadius: t.spacing.radius,
+          background: t.colors.primary,
+          color: '${isDark ? s.colors.background : '#fff'}',
+          fontSize: '15px', fontWeight: 600,
+          border: 'none', cursor: 'pointer',
+        },
+        btnSecondary: {
+          padding: '14px 28px', borderRadius: t.spacing.radius,
+          background: 'transparent', color: t.colors.text,
+          fontSize: '15px', fontWeight: 500,
+          border: \`1px solid \${t.colors.border}\`, cursor: 'pointer',
+        },
+        cardsGrid: {
+          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: t.spacing.gap, maxWidth: t.spacing.maxWidth,
+          margin: '0 auto', padding: '64px 48px',
+        },
+        card: {
+          background: t.colors.surface,
+          border: \`1px solid \${t.colors.border}\`,
+          borderRadius: t.spacing.radius, padding: '28px',
+        },
+        cardTitle: {
+          fontFamily: t.typography.headingFont,
+          fontWeight: t.typography.headingWeight,
+          fontSize: '17px', color: t.colors.text, marginBottom: '8px',
+        },
+        cardBody: { fontSize: '13px', color: t.colors.textMuted, lineHeight: 1.65 },
+      };
+    },
+  },
+};
+${'<'}/script>
+`;
+  }
+
+  // ── ESC to close modals ──
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closePreview();
+    if (e.key === 'Escape') { closePreview(); closeExport(); }
   });
 
   init();

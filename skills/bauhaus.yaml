@@ -1,6 +1,6 @@
 name: Bauhaus
 slug: bauhaus
-version: "1.0.0"
+version: 1.0.0
 description: Geometric modernism with primary colors, strict grids, and zero ornamentation
 mood:
   - geometric
@@ -8,48 +8,46 @@ mood:
   - systematic
   - timeless
 colors:
-  primary: "#E63030"
-  secondary: "#1B4FD8"
-  accent: "#F5C800"
-  background: "#F5F0E8"
-  surface: "#FFFFFF"
-  text: "#111111"
-  textMuted: "#555555"
-  border: "#111111"
+  primary: '#E63030'
+  secondary: '#1B4FD8'
+  accent: '#F5C800'
+  background: '#F5F0E8'
+  surface: '#FFFFFF'
+  text: '#111111'
+  textMuted: '#555555'
+  border: '#111111'
+  btnColor: '#E63030'
 typography:
-  headingFont: "Bebas Neue, sans-serif"
-  bodyFont: "IBM Plex Sans, sans-serif"
-  monoFont: "IBM Plex Mono, monospace"
-  baseSize: "16px"
-  scaleRatio: "1.5"
-  headingWeight: "400"
-  bodyWeight: "400"
+  headingFont: Bebas Neue, sans-serif
+  bodyFont: IBM Plex Sans, sans-serif
+  monoFont: IBM Plex Mono, monospace
+  baseSize: 16px
+  scaleRatio: '1.5'
+  headingWeight: '400'
+  bodyWeight: '400'
 spacing:
-  unit: "8px"
-  containerMaxWidth: "1100px"
-  sectionPadding: "96px 0"
-  componentGap: "32px"
-  borderRadius: "0px"
+  unit: 8px
+  containerMaxWidth: 1100px
+  sectionPadding: 96px 0
+  componentGap: 32px
+  borderRadius: 0px
+  buttonRadius: 8px
 designPrinciples:
-  - "Only three colors: red, blue, yellow — plus black and off-white"
-  - "Zero border radius — all forms are strictly rectangular"
-  - "Geometry as decoration: circles, triangles, rectangles as visual blocks"
-  - "Typography is structural: large condensed headings act as design elements"
-  - "The grid is sacred — everything aligns to a rigid modular system"
+  - 'Only three colors: red, blue, yellow — plus black and off-white'
+  - Zero border radius — all forms are strictly rectangular
+  - 'Geometry as decoration: circles, triangles, rectangles as visual blocks'
+  - 'Typography is structural: large condensed headings act as design elements'
+  - The grid is sacred — everything aligns to a rigid modular system
 componentStyle: >
-  Buttons are flat rectangles — solid red or blue fill, black text, zero radius.
-  Cards use black 2px borders with flat white fill. Colored blocks (full red, blue,
-  or yellow sections) serve as visual anchors. Geometric shapes (circles, right
-  triangles) used as decorative section dividers. Navigation is a strict horizontal
-  bar with equal-width items. No shadows, no gradients, no decoration.
+  Buttons are flat rectangles — solid red or blue fill, black text, zero radius. Cards use black 2px borders with flat
+  white fill. Colored blocks (full red, blue, or yellow sections) serve as visual anchors. Geometric shapes (circles,
+  right triangles) used as decorative section dividers. Navigation is a strict horizontal bar with equal-width items. No
+  shadows, no gradients, no decoration.
 prompt: >
-  Build this UI following Bauhaus design principles. Background is an off-white
-  warm cream #F5F0E8. Typography uses Bebas Neue for all headings — large, condensed,
-  treating text as a visual form. Only use three accent colors: red #E63030,
-  blue #1B4FD8, yellow #F5C800. Zero border radius everywhere. Black 2px borders
-  on all containers. Use geometric shapes (colored circles, triangles, rectangles)
-  as decorative elements and section separators. Layout follows a rigid grid.
-  No shadows, no gradients, no decorative flourishes. Pure form follows function.
-  Think Herbert Bayer's typography posters, Mondrian grids, or the original
-  Bauhaus school catalog design.
-exampleUseCase: "Design agency, architecture firm, art school, museum, modernist brand"
+  Build this UI following Bauhaus design principles. Background is an off-white warm cream #F5F0E8. Typography uses
+  Bebas Neue for all headings — large, condensed, treating text as a visual form. Only use three accent colors: red
+  #E63030, blue #1B4FD8, yellow #F5C800. Zero border radius everywhere. Black 2px borders on all containers. Use
+  geometric shapes (colored circles, triangles, rectangles) as decorative elements and section separators. Layout
+  follows a rigid grid. No shadows, no gradients, no decorative flourishes. Pure form follows function. Think Herbert
+  Bayer's typography posters, Mondrian grids, or the original Bauhaus school catalog design.
+exampleUseCase: Design agency, architecture firm, art school, museum, modernist brand

@@ -1,0 +1,170 @@
+{
+  "minimal": {
+    "description": "Klares, weißraum-orientiertes Design mit präziser Typografie und null visuellem Lärm",
+    "mood": ["klar", "fokussiert", "modern", "luftig"],
+    "designPrinciples": [
+      "Jedes Element muss seinen Platz verdienen — alles entfernen, das dem Inhalt nicht dient",
+      "Weißraum ist ein Gestaltungselement, kein leerer Raum",
+      "Typografie trägt das gesamte visuelle Gewicht",
+      "Maximal eine Akzentfarbe, sparsam eingesetzt",
+      "Das Raster ist unsichtbar, aber immer vorhanden"
+    ],
+    "componentStyle": "Buttons sind flach oder als Outline gestaltet, niemals mit Verläufen oder Schatten. Karten verwenden dezente Rahmen ohne Box-Schatten. Eingabefelder haben einen einfachen 1px-Rahmen, der beim Fokus mit der Akzentfarbe hervorgehoben wird. Keine dekorativen Icons. Navigation ist rein textbasiert. Hero-Bereiche basieren vollständig auf typografischer Hierarchie.",
+    "prompt": "Erstelle diese Benutzeroberfläche in einem minimalistischen Designstil. Verwende einen strengen weißen Hintergrund mit nahezu schwarzem Text. Jedes Element sollte großzügigen Weißraum haben — Abschnitte atmen, nichts wirkt gedrängt. Typografie ist der Held: Verwende große, fette Überschriften im Kontrast zu leichtem Fließtext. Der einzige Farbakzent wird nur bei primären CTAs und Links eingesetzt. Keine dekorativen Elemente, Verläufe oder Schatten. Alle UI-Komponenten verwenden klare Linien und dezente Rahmen. Das Raster ist eng und konsistent. Denke an Vercel, Linear oder Notion als Ästhetik.",
+    "exampleUseCase": "SaaS-Landingpage, Entwicklertool, Portfolio, Dokumentationsseite"
+  },
+  "corporate": {
+    "description": "Professionelle, vertrauenswürdige Designsprache für Unternehmensprodukte und B2B-Tools",
+    "mood": ["professionell", "vertrauenswürdig", "strukturiert", "zuverlässig"],
+    "designPrinciples": [
+      "Hierarchie kommuniziert Vertrauen: strukturiertes Layout mit klarem Informationsfluss",
+      "Blau kommuniziert Verlässlichkeit — für alle Hauptaktionen verwenden",
+      "Dichtes Informationsdesign: Tabellen, Daten und Listen haben höchste Priorität",
+      "Mikro-Interaktionen sind subtil: keine federnden Animationen",
+      "Barrierefreiheit zuerst: mindestens 4,5:1 Kontrastverhältnis überall"
+    ],
+    "componentStyle": "Buttons: solides Primärblau mit leichter Rundung. Sekundäre Buttons sind weiß mit Rahmen. Karten haben einen hellen Hintergrund mit 1px-Rahmen. Tabellen haben abwechselnde Zeilenhintergründe. Datenbadges sind in der Form von Pills in hellen semantischen Farben.",
+    "prompt": "Erstelle diese Unternehmens-Produkt-UI. Verwende einen sauberen weißen Hintergrund mit Primärblau für alle wichtigen CTAs, Links und aktive Zustände. Typografie ist strukturiert und dicht — dies ist ein datenreiches Produkt. Karten verwenden eine sehr helle graue Oberfläche mit sauberen 1px-Rahmen. Tabellen, Listen und Datenanzeigen haben hohe Priorität — mache sie leicht scanbar. Buttons sind solide blau (primär) oder als Outline (sekundär). Keine Verläufe. Gestalte für lange Arbeitssitzungen: geringer visueller Ermüdungseffekt, hohe Informationsdichte. Denke an Salesforce, Jira, Linear oder HubSpot.",
+    "exampleUseCase": "CRM, Analyse-Dashboard, Admin-Panel, B2B-SaaS, internes Tool"
+  },
+  "dark-luxury": {
+    "description": "Hochklassiger Dark Mode mit Goldakzenten, redaktioneller Typografie und Premium-Gefühl",
+    "mood": ["luxuriös", "redaktionell", "anspruchsvoll", "dunkel"],
+    "designPrinciples": [
+      "Tiefes Nahezu-Schwarz als Hintergrund — niemals reines Schwarz, immer ein warmes Nahezu-Schwarz",
+      "Gold ist kostbar — sparsam einsetzen, nur für wichtige Hierarchiemomente",
+      "Serifenüberschriften gepaart mit leichtem serifenlosen Fließtext erzeugen redaktionellen Kontrast",
+      "Großzügiger Weißraum signalisiert Luxus — nichts ist gedrängt",
+      "Fotografie und Bilder dominieren — die UI tritt in den Hintergrund"
+    ],
+    "componentStyle": "Buttons: minimaler Outline-Stil mit Goldrahmen und Goldtext — keine Füllungen. Karten haben eine dunkle Oberfläche mit einer warmen goldgetönten Akzentlinie am oberen Rand. Eingabefelder sind dunkel mit dezentem warmem Rahmen. Trennlinien sind dünne Goldlinien. Abschnittsüberschriften verwenden große Serifenschrift.",
+    "prompt": "Erstelle diese Benutzeroberfläche im Dark-Luxury-Redaktionsstil. Hintergrund ist warmes Nahezu-Schwarz. Alle Überschriften verwenden die Serifenschrift Playfair Display — groß, fett, ausdrucksstark. Fließtext ist leichtgewichtig in warmem Gebrochenweiß. Der einzige Akzent ist Gold — nur für wichtige UI-Momente verwenden: primäre CTAs, aktive Navigationspunkte, Hover-Unterstreichungen, dekorative Linien. Buttons sind als Outline mit Goldrahmen gestaltet. Keine abgerundeten Ecken. Enormer Weißraum zwischen Abschnitten. Denke an ein Luxusmodehaus, ein luxuriöses Hotel oder eine Kunstgalerie.",
+    "exampleUseCase": "Luxusmarke, Mode, Hotel, Galerie, Premium-Redaktion, hochwertiges Portfolio"
+  },
+  "glassmorphism": {
+    "description": "Mattglas-Oberflächen mit lebhaften Verläufen, Unschärfeeffekten und leuchtender Tiefe",
+    "mood": ["futuristisch", "premium", "ätherisch", "lebendig"],
+    "designPrinciples": [
+      "Hintergründe sind dunkel mit reichhaltigen lila-zu-blauen Verlaufsgittern",
+      "Karten verwenden backdrop-filter blur mit rgba weißer Oberfläche",
+      "Subtiler weißer Rahmen trennt Glas vom Hintergrund",
+      "Leuchtende Elemente: farbige Drop-Schatten passend zum Akzent",
+      "Inhalt ist immer heller Text auf dunklem Glas"
+    ],
+    "componentStyle": "Karten verwenden backdrop-filter blur, rgba weißen Hintergrund und dezenten weißen Rahmen. Buttons verwenden Verlaufsfüllungen mit sanftem Leuchten. Eingabefelder haben einen Glashintergrund. Der Hintergrund hat große verschwommene radiale Verlaufs-Orbs in Lila und Cyan.",
+    "prompt": "Erstelle diese Benutzeroberfläche mit Glasmorphismus. Hintergrund ist tiefes dunkles Marine mit großen verschwommenen Verlaufs-Orbs als Hintergrunddekoration. Alle UI-Karten und Panels müssen backdrop-filter blur, rgba weiße Oberfläche und dezenten Rahmen verwenden. Text ist reines Weiß oder halbtransparentes Weiß für gedämpfte Elemente. Buttons verwenden Verlaufsfüllungen mit passendem Leuchten. Denke an Apples WWDC-Folien, Stripes Verlaufsstartseite oder iOS-Widgets. Premium, futuristisch, leuchtend.",
+    "exampleUseCase": "Web3-App, KI-Produkt, Musikplattform, Premium-SaaS-Dashboard"
+  },
+  "neo-brutalism": {
+    "description": "Fette Rahmen, harte Schatten, flache Füllungen und rohe, unentschuldigte UI-Energie",
+    "mood": ["fett", "verspielt", "laut", "roh"],
+    "designPrinciples": [
+      "3–4px durchgehend schwarze Rahmen auf fast jedem Element",
+      "Harte versetzte Box-Schatten statt weicher Schatten",
+      "Flache helle Füllungen — Gelb, Koralle, Cyan — niemals Verläufe",
+      "Typografie ist schwer und unentschuldigt",
+      "Hover-Zustände verschieben das Element um 2px und versetzen den Schatten"
+    ],
+    "componentStyle": "Alle Karten, Buttons und Container haben einen dicken durchgehend schwarzen Rahmen mit hartem Drop-Schatten. Beim Hovern werden Elemente verschoben und der Schatten verkleinert. Button-Füllungen verwenden primäres Gelb oder sekundäre Koralle. Eingabefelder haben die gleiche schwere Rahmenbehandlung.",
+    "prompt": "Erstelle diese UI im Neo-Brutalistischen Stil. Jede Karte, jeder Button, jeder Dialog und jeder Container muss einen dicken durchgehend schwarzen Rahmen mit hartem versetzten Box-Schatten haben. Flache helle Füllungen — Gelb, Koralle, Cyan — keine Verläufe nirgendwo. Typografie ist fett und überdimensioniert. Hover-Zustände müssen Elemente um 2px verschieben und den Schattenversatz reduzieren. Denke an Figmas Spielplatz, Gumroads Redesign oder Pitchs Marketingseite. Energie hoch halten, nichts sollte poliert oder korporativ wirken.",
+    "exampleUseCase": "Kreatives Portfolio, Startup-Landingpage, Designtool, Indie-Produkt"
+  },
+  "retro": {
+    "description": "Von den 80ern inspirierte Terminal-Ästhetik mit Scanlines, Phosphorleuchten und CRT-Vibes",
+    "mood": ["nostalgisch", "geeky", "atmosphärisch", "nischig"],
+    "designPrinciples": [
+      "Alles ist Monospace — keine humanistischen oder Display-Schriften",
+      "Terminal-Grün auf Nahezu-Schwarz — Phosphorleuchten-Effekt mit text-shadow",
+      "Null Rahmenradius — Ecken sind immer scharf",
+      "ASCII-Kunst und Box-Drawing-Zeichen als Dekoration",
+      "Scanline-Overlay mit CSS für Textur"
+    ],
+    "componentStyle": "Buttons sehen aus wie Terminal-Befehle mit eckigen Klammern. Karten sind ASCII-Box-Drawing-umrandete Panels. Eingabefelder sehen wie Terminal-Prompts mit blinkendem Cursor aus. Aller Text hat einen subtilen grünen text-shadow für Phosphorleuchten. Hintergrund hat ein Scanline-CSS-Overlay.",
+    "prompt": "Erstelle diese UI mit einer Retro-CRT-Terminal-Ästhetik. Hintergrund ist Nahezu-Schwarz. Aller Text ist Phosphorgrün mit subtillem Leuchten. Jede Schrift ist Monospace. Null Rahmenradius nirgendwo. Buttons verwenden ASCII-Klammer-Stil. Karten verwenden Box-Drawing-Zeichen für Rahmen. Füge ein CSS-Scanline-Overlay hinzu. Denke an ein altmodisches Hacker-Terminal, Matrix-Ästhetik oder eine Retro-Spiel-UI. Atmosphärisch und stimmungsvoll halten.",
+    "exampleUseCase": "Entwicklertool, Spiel, Hacker-Ästhetik-Portfolio, CTF-Plattform, CLI-Dokumentationsseite"
+  },
+  "cyberpunk": {
+    "description": "Neon-durchtränkte dystopische UI mit Glitch-Effekten, Scanlines und elektrischem Kontrast",
+    "mood": ["elektrisch", "dunkel", "futuristisch", "gefährlich"],
+    "designPrinciples": [
+      "Neonleuchten auf allem — text-shadow und box-shadow in Rot, Cyan, Gelb",
+      "Abgewinkelte Schnitte: clip-path auf Karten und Buttons",
+      "Glitch-Animation: dupliziertes Element mit Versatz und Farbverschiebung beim Hovern",
+      "Dunkle Tiefraum-Hintergründe mit subtiler Rausch-Textur-Überlagerung",
+      "Hoher Kontrast — Neon nur auf Nahezu-Schwarz"
+    ],
+    "componentStyle": "Buttons verwenden clip-path Polygon-Schnitte mit Neon-Rahmenleuchten. Karten haben einen Neon-Rahmen mit passendem Farb-Box-Schatten-Leuchten. Überschriften haben rote oder Cyan-text-shadow Glitch-Duplikate. Abschnittshintergründe verwenden dunkle Rausch-Textur.",
+    "prompt": "Erstelle diese UI im Cyberpunk-Stil. Hintergrund ist tief dunkel, nahezu schwarz mit Blautönung. Alle Neonakzente: Primär-Rot, Cyan, Gelb. Überschriften verwenden eckige Schrift mit leuchtendem text-shadow. Buttons und Karten haben scharfe abgewinkelte Ecken via clip-path, mit Neon-Rahmen und passendem Box-Schatten-Leuchten. Füge CSS-Glitch-Animation beim Hovern hinzu. Typografie ist eckig und eng. Denke an die Cyberpunk-2077-UI, Blade-Runner-2049-Terminals oder Ghost-in-the-Shell-HUDs. Hohe Energie, hoher Kontrast.",
+    "exampleUseCase": "Spiel-UI, Tech-Startup, Krypto/Web3-dApp, Esports-Plattform, Sci-Fi-Portfolio"
+  },
+  "vaporwave": {
+    "description": "Nostalgische 80s/90s Retro-Internet-Ästhetik mit pink-lila Verläufen und Gitterböden",
+    "mood": ["nostalgisch", "verträumt", "surreal", "pastell"],
+    "designPrinciples": [
+      "Pink-zu-Lila-Verläufe auf Hintergründen, Buttons und Überschriften",
+      "Perspektivisches Gitter als Hero-Hintergrunddekoration",
+      "Chrom/Reflektionstext-Effekt auf Hauptüberschriften",
+      "Sanfte Leuchteffekte in Pink und Mint — nichts ist scharf oder hart",
+      "Retro-VHS-artige Dekorationselemente: Scanlines, Statik, Doppelbelichtung"
+    ],
+    "componentStyle": "Karten haben einen lila getönten halbtransparenten Hintergrund mit einem rosa Verlaufsrahmen. Buttons sind verlaufsgefüllte Pill-Formen mit sanftem Leuchten. Überschriften verwenden Verlaufstext-Effekt von Pink zu Lila. Hero-Bereich hat ein CSS-Perspektivgitter, das zum Horizont zurückweicht.",
+    "prompt": "Erstelle diese UI in Vaporwave-Ästhetik. Hintergrund ist tiefes Lila mit leuchtend pink-zu-lila radialem Verlaufsbloom hinter dem Hero-Inhalt. Alle Überschriften verwenden Verlaufstext-Effekt von Pink zu Lila. Buttons sind verlaufsgefüllte Pill-Formen mit sanftem Rosa-Leuchten. Karten haben halbtransparente Lila-Oberfläche mit Verlaufsrahmen. Füge ein CSS-3D-Perspektivgitter in den Hero ein. Mintgrün wird als Kontrast-Akzent für CTAs verwendet. Verträumt, diesig, nostalgisch. Denke an Windows 95 trifft Miami Beach bei Sonnenuntergang.",
+    "exampleUseCase": "Musikplattform, kreatives Portfolio, Indie-Spiel, Retro-thematisierter Blog, Kunstprojekt"
+  },
+  "bauhaus": {
+    "description": "Geometrischer Modernismus mit Primärfarben, strengen Rastern und null Ornamentik",
+    "mood": ["geometrisch", "fett", "systematisch", "zeitlos"],
+    "designPrinciples": [
+      "Nur drei Farben: Rot, Blau, Gelb — plus Schwarz und Gebrochenweiß",
+      "Null Rahmenradius — alle Formen sind streng rechteckig",
+      "Geometrie als Dekoration: Kreise, Dreiecke, Rechtecke als visuelle Blöcke",
+      "Typografie ist strukturell: große kondensierte Überschriften wirken als Gestaltungselemente",
+      "Das Raster ist heilig — alles richtet sich nach einem strengen modularen System aus"
+    ],
+    "componentStyle": "Buttons sind flache Rechtecke — solide rote oder blaue Füllung, schwarzer Text, null Radius. Karten verwenden schwarze 2px-Rahmen mit flacher weißer Füllung. Farbige Blöcke dienen als visuelle Anker. Geometrische Formen werden als dekorative Abschnittstrenner verwendet. Keine Schatten, keine Verläufe, keine Dekoration.",
+    "prompt": "Erstelle diese UI nach Bauhaus-Gestaltungsprinzipien. Hintergrund ist ein warmes Cremeweiß. Typografie verwendet kondensierte Fettschrift für alle Überschriften — Text wird als visuelle Form behandelt. Verwende nur drei Akzentfarben: Rot, Blau, Gelb. Null Rahmenradius überall. Schwarze 2px-Rahmen auf allen Containern. Verwende geometrische Formen als dekorative Elemente und Abschnittstrenner. Keine Schatten, keine Verläufe, keine dekorativen Verzierungen. Reine Form folgt Funktion. Denke an Herbert Bayers Typografieplakate oder Mondrian-Raster.",
+    "exampleUseCase": "Designagentur, Architekturbüro, Kunstschule, Museum, modernistische Marke"
+  },
+  "cottagecore": {
+    "description": "Weiche organische Wärme mit botanischen Texturen, handgezeichneten Vibes und erdigen Pastelltönen",
+    "mood": ["warm", "gemütlich", "organisch", "sanft"],
+    "designPrinciples": [
+      "Warme cremige Gebrochenweiß-Töne — niemals reines Weiß, immer gealtert und weich",
+      "Erdiges Grün und Terrakotta als einzige Akzentfamilie",
+      "Organische Formen: leicht unvollkommene Rahmen, Blob-SVGs als Hintergründe",
+      "Serifentypografie durchgehend — redaktionell und warm, niemals geometrisch serifenlos",
+      "Botanische Bilder: Blätter, Blumen, Kräuter als Dekorationsmotive"
+    ],
+    "componentStyle": "Buttons sind weiche gerundete Pills in gedämpftem Salbeigrün oder Terrakotta. Karten verwenden eine warme Pergamentoberfläche mit sanftem Rahmen und zartem Schatten. Eingabefelder haben einen handgeschriebenen Unterstrich oder sanft gerundeten Rahmen. Dekorative botanische SVG-Linienzeichnungen werden als Abschnittstrenner verwendet.",
+    "prompt": "Erstelle diese UI in einer Cottagecore-Ästhetik. Hintergrund ist warmes Creme — gealtert, weich, niemals klinisch weiß. Alle Typografie ist Serif: große elegante literarische Überschriften, warmer Fließtext. Farben sind erdig: Salbeigrün, warmes Braun, Terrakotta. Buttons sind gerundete Pill-Formen ohne harte Kanten. Karten haben Pergamentoberfläche mit zartem Schatten. Verwende botanisch inspirierte SVG-Dekorationen als Abschnittstrenner oder Hintergrundtextur. Alles sollte handgefertigt, warm und natürlich wirken — wie ein schönes altes Rezeptbuch oder ein Cottage-Gartentagebuch.",
+    "exampleUseCase": "Food-Blog, Wellness-Marke, Handwerksgeschäft, Lifestyle-Plattform, Rezeptseite"
+  },
+  "swiss-international": {
+    "description": "Helvetica-Ära-Rasterdisziplin — starke Rotakzente, strenge Ausrichtung, null Sentiment",
+    "mood": ["diszipliniert", "autoritativ", "karg", "präzise"],
+    "designPrinciples": [
+      "Das Raster ist Gesetz — jedes Element rastet in einem strengen modularen Spaltensystem ein",
+      "Rot ist ein Signal, keine Dekoration — nur für Hierarchie und Aufmerksamkeit verwenden",
+      "Nur Helvetica oder System-Sans-Serif — Serifenschriften sind verboten",
+      "Weißraum kommuniziert Selbstvertrauen — widerstehe dem Drang, ihn zu füllen",
+      "Asymmetrische Layouts mit großem Negativraum werden gegenüber Symmetrie bevorzugt"
+    ],
+    "componentStyle": "Alle Rahmen sind 1–2px solid Schwarz. Buttons sind flache schwarze Füllungen mit weißem Text oder als Outline in Schwarz. Karten sind weiße Boxen mit schwarzem Rahmen — kein Radius, kein Schatten. Rot ist für primäre CTA, aktive Zustände und kritische Labels reserviert. Große typografische Zahlen oder Pull-Quotes dienen als Abschnittsdekoration.",
+    "prompt": "Erstelle diese UI im Internationalen Typografischen Stil der Schweizer Schule. Hintergrund ist reines Weiß. Schriftart ist ausschließlich Helvetica Neue oder System-Sans-Serif. Rot wird nur für primäre CTA-Buttons, aktive Zustände und strukturelle Akzentlinien verwendet. Alles andere ist Schwarz, Weiß oder Grau. Null Rahmenradius. Schwarze Rahmen auf allen Containern. Layout folgt einem strengen Mehrspaltengitter — asymmetrisch, diszipliniert. Große schwarze Überschriftszahlen werden als visuelle Anker verwendet. Keine Verläufe, keine Texturen, keine dekorativen Formen. Denke an Müller-Brockmanns Plakatgitter oder die Helvetica-Dokumentar-Ästhetik.",
+    "exampleUseCase": "Designstudio, Architektur, Redaktionsmagazin, Museum, Markenidentitätsagentur"
+  },
+  "biopunk": {
+    "description": "Organische dunkle Biomechanik — nasse Oberflächen, toxische Grüntöne, DNA-Muster, lebendige UI",
+    "mood": ["organisch", "dunkel", "experimentell", "beunruhigend"],
+    "designPrinciples": [
+      "Asymmetrischer Rahmenradius: organische blob-artige Ecken",
+      "Toxische Neongrün-Leuchteffekte auf wichtigen UI-Elementen",
+      "SVG-Hintergrundmuster: DNA-Helices, zelluläre Gitter, Schaltkreis-organische Hybride",
+      "Nasse/glänzende Oberflächenwirkung durch subtile Verlaufsüberlagerung auf Karten",
+      "Alles fühlt sich lebendig an: Atem-Puls-Animationen auf wichtigen Komponenten"
+    ],
+    "componentStyle": "Karten verwenden asymmetrischen Rahmenradius mit dunkler grüner Oberfläche und subtillem Innenleuchten. Buttons sind organisch geformt mit pulsierender Leuchtanimation. Rahmen sind dunkelgrün, oft gepunktet oder gestrichelt, was zelluläre Struktur andeutet. Hintergrund hat ein SVG-Hexagonalgitter-Muster.",
+    "prompt": "Erstelle diese UI in einem Biopunk-Designstil. Hintergrund ist Nahezu-Schwarz mit tiefem Grünton. Alle Oberflächen sind dunkel organisches Grün. Toxisches Neongrün ist die Primärfarbe — verwendet für Leuchteffekte, Texthervorhebungen und wichtige UI-Elemente mit starkem Box-Schatten-Leuchten. Verwende asymmetrischen Rahmenradius auf allen Karten und Buttons, um ein organisches lebendiges Gefühl zu erzeugen. Füge ein CSS-SVG-Hexagonalgitter als Hintergrundmuster hinzu. Überschriften sind schwer und eckig, Fließtext ist klinisch und datenhaft. Animiere wichtige Elemente mit einem langsamen Puls-Atem-Keyframe im grünen Leuchten. Denke an die Filmästhetik von Annihilation, die SOMA-Spiel-UI oder Biopunk-Genlabor-Schnittstellen.",
+    "exampleUseCase": "Biotech-Startup, Sci-Fi-Spiel, Genetikforschungstool, experimentelle Kunst, Horror-Ästhetik"
+  }
+}

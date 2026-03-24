@@ -8,6 +8,29 @@ const app = express();
 const PORT = 3000;
 const SKILLS_DIR = path.join(__dirname, '../skills');
 const PUBLIC_DIR = path.join(__dirname, '../public');
+const TRANSLATIONS_DIR = path.join(__dirname, '../translations');
+
+function loadTranslation(lang: string): Record<string, any> {
+  const p = path.join(TRANSLATIONS_DIR, `${lang}.json`);
+  if (!fs.existsSync(p)) return {};
+  try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return {}; }
+}
+
+function applyTranslation(skill: DesignSkill, lang: string): DesignSkill {
+  if (!lang || lang === 'en') return skill;
+  const t = loadTranslation(lang);
+  const tx = t[skill.slug];
+  if (!tx) return skill;
+  return {
+    ...skill,
+    description:      tx.description      ?? skill.description,
+    mood:             tx.mood             ?? skill.mood,
+    designPrinciples: tx.designPrinciples ?? skill.designPrinciples,
+    componentStyle:   tx.componentStyle   ?? skill.componentStyle,
+    prompt:           tx.prompt           ?? skill.prompt,
+    exampleUseCase:   tx.exampleUseCase   ?? skill.exampleUseCase,
+  };
+}
 
 app.use(express.json());
 app.use(express.static(PUBLIC_DIR));
@@ -29,22 +52,26 @@ function loadSkill(slug: string): DesignSkill | null {
   return yaml.load(fs.readFileSync(skillPath, 'utf8')) as DesignSkill;
 }
 
-// GET all skills
-app.get('/api/skills', (_req, res) => {
-  res.json(loadSkills());
+// GET all skills (with optional ?lang=XX translation)
+app.get('/api/skills', (req, res) => {
+  const lang = (req.query.lang as string) || 'en';
+  res.json(loadSkills().map(s => applyTranslation(s, lang)));
 });
 
-// GET single skill
+// GET single skill (with optional ?lang=XX translation)
 app.get('/api/skills/:slug', (req, res) => {
   const skill = loadSkill(req.params.slug);
   if (!skill) return res.status(404).json({ error: 'Skill not found' });
-  res.json(skill);
+  const lang = (req.query.lang as string) || 'en';
+  res.json(applyTranslation(skill, lang));
 });
 
-// GET skill as Claude-ready prompt text
+// GET skill as Claude-ready prompt text (with optional ?lang=XX translation)
 app.get('/api/skills/:slug/prompt', (req, res) => {
-  const skill = loadSkill(req.params.slug);
-  if (!skill) return res.status(404).json({ error: 'Skill not found' });
+  const raw = loadSkill(req.params.slug);
+  if (!raw) return res.status(404).json({ error: 'Skill not found' });
+  const lang = (req.query.lang as string) || 'en';
+  const skill = applyTranslation(raw, lang);
 
   const prompt = `# Design Skill: ${skill.name}
 # ${skill.description}
