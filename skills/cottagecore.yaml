@@ -1,0 +1,56 @@
+name: Cottagecore
+slug: cottagecore
+version: "1.0.0"
+description: Soft organic warmth with botanical textures, hand-drawn vibes, and earthy pastels
+mood:
+  - warm
+  - cozy
+  - organic
+  - gentle
+colors:
+  primary: "#6B7C45"
+  secondary: "#A0785A"
+  accent: "#D4956A"
+  background: "#FAF6EF"
+  surface: "#F3EBD8"
+  text: "#3D2B1F"
+  textMuted: "#7A6052"
+  border: "#D9C9A8"
+typography:
+  headingFont: "Cormorant Garamond, Georgia, serif"
+  bodyFont: "Lora, Georgia, serif"
+  monoFont: "Courier Prime, monospace"
+  baseSize: "17px"
+  scaleRatio: "1.333"
+  headingWeight: "600"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1000px"
+  sectionPadding: "100px 0"
+  componentGap: "28px"
+  borderRadius: "16px"
+designPrinciples:
+  - "Warm, creamy off-whites — never pure #FFF, always aged and soft"
+  - "Earthy green and terracotta as the only accent family"
+  - "Organic shapes: slightly imperfect borders, blob SVGs as backgrounds"
+  - "Serif typography throughout — editorial and warm, never geometric sans"
+  - "Botanical imagery: leaves, flowers, herbs as decorative motifs"
+componentStyle: >
+  Buttons are soft rounded pills (24px radius) in muted sage green or terracotta.
+  Cards use a warm parchment surface (#F3EBD8) with a soft border and gentle shadow.
+  Inputs have a handwritten-style underline or soft rounded border.
+  Section backgrounds alternate between cream and a lighter parchment.
+  Decorative botanical SVG line drawings used as section dividers or corner ornaments.
+  Text links are underlined in terracotta.
+prompt: >
+  Build this UI in a Cottagecore aesthetic. Background is warm cream #FAF6EF —
+  aged, soft, never clinical white. All typography is serif: Cormorant Garamond
+  for headings (large, elegant, literary), Lora for body text. Colors are earthy:
+  sage green #6B7C45, warm brown #A0785A, terracotta #D4956A. Buttons are rounded
+  pill shapes in sage or terracotta with no hard edges. Cards have a parchment
+  surface with gentle shadows. Use botanical-inspired SVG decorations (leaf sprigs,
+  small flowers) as section dividers or background texture. Everything should feel
+  hand-crafted, warm, and natural — like a beautiful old recipe book or a cottage
+  garden journal. Think Kinfolk magazine, Etsy shop branding, or a homestead blog.
+exampleUseCase: "Food blog, wellness brand, handmade shop, lifestyle platform, recipe site"

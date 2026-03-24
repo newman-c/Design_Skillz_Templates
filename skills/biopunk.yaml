@@ -1,0 +1,57 @@
+name: Biopunk
+slug: biopunk
+version: "1.0.0"
+description: Organic dark biomechanics — wet surfaces, toxic greens, DNA patterns, living UI
+mood:
+  - organic
+  - dark
+  - experimental
+  - unsettling
+colors:
+  primary: "#39FF14"
+  secondary: "#7FFF00"
+  accent: "#FF6EC7"
+  background: "#050A05"
+  surface: "#0A160A"
+  text: "#CCFFCC"
+  textMuted: "#4A7A4A"
+  border: "#1A3A1A"
+typography:
+  headingFont: "Exo 2, sans-serif"
+  bodyFont: "Source Code Pro, monospace"
+  monoFont: "Source Code Pro, monospace"
+  baseSize: "15px"
+  scaleRatio: "1.25"
+  headingWeight: "800"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1200px"
+  sectionPadding: "80px 0"
+  componentGap: "20px"
+  borderRadius: "20px 4px 20px 4px"
+designPrinciples:
+  - "Asymmetric border-radius: organic blob-like corners (20px 4px 20px 4px)"
+  - "Toxic neon green (#39FF14) glows on key UI elements"
+  - "SVG background patterns: DNA helices, cellular grids, circuit-organic hybrids"
+  - "Wet/glossy surface effect using subtle gradient overlay on cards"
+  - "Everything feels alive: breathing pulse animations on key components"
+componentStyle: >
+  Cards use asymmetric border radius (20px 4px 20px 4px) with a dark green surface
+  and a subtle inner glow in toxic green. Buttons are organically shaped with a
+  pulsing glow animation. Borders are dark green, often with a dotted or dashed
+  style suggesting cellular structure. Background has an SVG hexagonal grid pattern
+  in very dark green. Data readouts and numbers use Source Code Pro in bright green.
+  Hover states trigger a ripple-like spreading glow effect.
+prompt: >
+  Build this UI in a Biopunk design style. Background is near-black with deep green
+  tint #050A05. All surfaces are dark organic green #0A160A. Toxic neon green
+  #39FF14 is the primary color — used for glows, text highlights, and key UI
+  elements with a strong box-shadow glow (0 0 20px #39FF14).
+  Use asymmetric border-radius (20px 4px 20px 4px) on all cards and buttons
+  to create an organic, living feel. Add a CSS SVG hexagonal grid as a background
+  pattern. Typography uses Exo 2 for headings (heavy, angular) and Source Code Pro
+  for body text (clinical, data-like). Animate key elements with a slow pulse/breathe
+  keyframe in the green glow. Think Annihilation film aesthetic, SOMA game UI,
+  or biopunk genetic laboratory interfaces.
+exampleUseCase: "Biotech startup, sci-fi game, genetic research tool, experimental art, horror aesthetic"

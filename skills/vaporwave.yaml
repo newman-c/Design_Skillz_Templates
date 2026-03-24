@@ -1,0 +1,55 @@
+name: Vaporwave
+slug: vaporwave
+version: "1.0.0"
+description: Nostalgic 80s/90s retro-internet aesthetic with pink-purple gradients and grid floors
+mood:
+  - nostalgic
+  - dreamy
+  - surreal
+  - pastel
+colors:
+  primary: "#FF71CE"
+  secondary: "#B967FF"
+  accent: "#05FFA1"
+  background: "#1A0533"
+  surface: "#2D0A52"
+  text: "#FFF0FF"
+  textMuted: "#CC88EE"
+  border: "#7B2FBE"
+typography:
+  headingFont: "Righteous, cursive"
+  bodyFont: "Quicksand, sans-serif"
+  monoFont: "VT323, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.333"
+  headingWeight: "400"
+  bodyWeight: "500"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1200px"
+  sectionPadding: "100px 0"
+  componentGap: "28px"
+  borderRadius: "12px"
+designPrinciples:
+  - "Pink-to-purple gradients on backgrounds, buttons, and headings"
+  - "Perspective grid floor as hero background decoration (CSS 3D transform)"
+  - "Chrome/reflective text effect on main headings using background-clip"
+  - "Soft glows in pink and mint — nothing is sharp or harsh"
+  - "Retro VHS-style decorative elements: scanlines, static, double-exposure"
+componentStyle: >
+  Cards have a purple-tinted semi-transparent background with a pink gradient border.
+  Buttons use a full pink-to-purple gradient fill with a soft glow.
+  Headings use a gradient text effect (background-clip: text) shifting pink to purple.
+  Hero section has a CSS perspective grid receding to the horizon in neon pink lines.
+  Decorative elements include cassette tapes, sunsets, and retro computer imagery.
+prompt: >
+  Build this UI in Vaporwave aesthetic. Background is a deep purple #1A0533 with
+  a glowing pink-to-purple gradient radial bloom behind hero content.
+  All headings use Righteous font with a gradient text effect (pink #FF71CE to
+  purple #B967FF via background-clip: text). Buttons are gradient-filled pill shapes
+  with a soft pink glow. Cards have a semi-transparent purple surface with a
+  1px gradient border. Include a CSS 3D perspective grid in the hero (pink grid lines,
+  receding to a horizon). Mint green #05FFA1 is used as a contrast accent for CTAs.
+  Dreamy, hazy, and nostalgic. Think Windows 95 meets Miami Beach at sunset.
+  Reference: lo-fi aesthetic playlists, retrowave album art, synthwave posters.
+exampleUseCase: "Music platform, creative portfolio, indie game, retro-themed blog, art project"

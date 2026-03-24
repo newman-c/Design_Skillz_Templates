@@ -1,0 +1,57 @@
+name: Swiss International
+slug: swiss-international
+version: "1.0.0"
+description: Helvetica-era grid discipline — stark red accents, strict alignment, zero sentiment
+mood:
+  - disciplined
+  - authoritative
+  - stark
+  - precise
+colors:
+  primary: "#E8000D"
+  secondary: "#000000"
+  accent: "#0047AB"
+  background: "#FFFFFF"
+  surface: "#F4F4F4"
+  text: "#000000"
+  textMuted: "#666666"
+  border: "#000000"
+typography:
+  headingFont: "Helvetica Neue, Arial, sans-serif"
+  bodyFont: "Helvetica Neue, Arial, sans-serif"
+  monoFont: "Courier New, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.414"
+  headingWeight: "700"
+  bodyWeight: "400"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1200px"
+  sectionPadding: "80px 0"
+  componentGap: "24px"
+  borderRadius: "0px"
+designPrinciples:
+  - "The grid is law — every element snaps to a strict modular column system"
+  - "Red is a signal, not decoration — use only for hierarchy and attention"
+  - "Helvetica or system sans-serif only — serif fonts are forbidden"
+  - "Whitespace communicates confidence — resist the urge to fill it"
+  - "Asymmetric layouts with large negative space are preferred over symmetry"
+componentStyle: >
+  All borders are 1-2px solid black. Buttons are flat black fills with white text
+  or outlined black. Cards are white boxes with a black border — no radius, no shadow.
+  Red is reserved for: primary CTA, active state, critical labels.
+  Navigation uses clean horizontal text alignment, left-justified.
+  Large typographic numbers or pull-quotes serve as section decoration.
+  Tables are clean, ruled lines only.
+prompt: >
+  Build this UI in the Swiss International Typographic Style. Background is pure white.
+  Font is Helvetica Neue or system sans-serif exclusively — never serif, never rounded.
+  Red #E8000D is used only for primary CTA buttons, active states, and structural
+  accent lines (thin horizontal red bars separating sections). Everything else is
+  black, white, or grey. Zero border radius. Black borders on all containers.
+  Layout follows a strict multi-column grid — asymmetric, disciplined.
+  Large black headline numbers used as visual anchors. White space is intentional
+  and generous. No gradients, no textures, no decorative shapes.
+  Think Müller-Brockmann poster grids, Helvetica documentary aesthetic,
+  or the original Swiss design movement.
+exampleUseCase: "Design studio, architecture, editorial magazine, museum, brand identity agency"

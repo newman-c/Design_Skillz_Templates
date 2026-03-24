@@ -1,0 +1,54 @@
+name: Cyberpunk
+slug: cyberpunk
+version: "1.0.0"
+description: Neon-drenched dystopian UI with glitch effects, scanlines, and electric contrast
+mood:
+  - electric
+  - dark
+  - futuristic
+  - dangerous
+colors:
+  primary: "#FF003C"
+  secondary: "#00FFF0"
+  accent: "#FFE600"
+  background: "#050510"
+  surface: "#0D0D1F"
+  text: "#E8E8FF"
+  textMuted: "#6666AA"
+  border: "#FF003C"
+typography:
+  headingFont: "Orbitron, monospace"
+  bodyFont: "Rajdhani, sans-serif"
+  monoFont: "Share Tech Mono, monospace"
+  baseSize: "16px"
+  scaleRatio: "1.333"
+  headingWeight: "900"
+  bodyWeight: "500"
+spacing:
+  unit: "8px"
+  containerMaxWidth: "1300px"
+  sectionPadding: "80px 0"
+  componentGap: "20px"
+  borderRadius: "2px"
+designPrinciples:
+  - "Neon glows on everything — text-shadow and box-shadow in red, cyan, yellow"
+  - "Angled cuts: clip-path on cards and buttons (skewed corners)"
+  - "Glitch animation: duplicate element with offset and color shift on hover"
+  - "Dark deep-space backgrounds with subtle noise texture overlay"
+  - "High contrast — neon on near-black only, never on light"
+componentStyle: >
+  Buttons use clip-path polygon cuts on corners with neon border glow.
+  Cards have a 1px neon border with a matching color box-shadow glow (0 0 12px).
+  Headings have red or cyan text-shadow glitch duplicates.
+  Section backgrounds use a dark noise texture. Dividers are neon horizontal lines.
+  Status indicators pulse with a keyframe glow animation.
+prompt: >
+  Build this UI in Cyberpunk style. Background is deep dark #050510 — nearly black
+  with a blue tint. All neon accents: primary red #FF003C, cyan #00FFF0, yellow #FFE600.
+  Headings use Orbitron font at heavy weight with a glowing text-shadow matching the
+  color. Buttons and cards have sharp angled corners via clip-path, with a neon border
+  and matching box-shadow glow (0 0 12px currentColor). Add CSS glitch animation on
+  hover — element shifts 2px with a color-channel offset effect.
+  Typography is angular and tight. Think Cyberpunk 2077 UI, Blade Runner 2049 terminals,
+  or Ghost in the Shell HUDs. High energy, high contrast, no softness anywhere.
+exampleUseCase: "Game UI, tech startup, crypto/web3 dApp, esports platform, sci-fi portfolio"
